@@ -113,7 +113,7 @@ const Page = () => {
       </Modal>
 
       <div className="flex flex-col md:flex-row relative">
-        <img src="/Logo!.png" alt="Logo" className="absolute w-20 top-3 left-10 z-1" />
+        <img src="/logo.png" alt="Logo" className="absolute w-20 top-3 left-10 z-1" />
 
         <div className="md:flex h-screen lg:w-[45.833%] hidden md:w-[50%] w-full">
           <img

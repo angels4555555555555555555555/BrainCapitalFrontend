@@ -36,9 +36,9 @@ const NavbarPortal = ({ admin = false, openMenu, setOpenMenu }) => {
 
       <div className="px-[24.5px_16px] py-2 flex justify-between items-center">
         {admin ? (
-          <img src="/Logo!.png" alt="" className="w-20"/>
+          <img src="/logo.png" alt="" className="w-20"/>
         ) : (
-          <img src="/Logo!.png" alt="" className="w-20"/>
+          <img src="/logo.png" alt="" className="w-20"/>
         )}
 
         <div

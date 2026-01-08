@@ -52,7 +52,7 @@ export default function AdminLoginPage() {
         />
 
         {/* Logo */}
-        <img src="/Logo!.png" className="w-20 lg:absolute lg:left-[77px] text-white lg:top-6" />
+        <img src="/logo.png" className="w-20 lg:absolute lg:left-[77px] text-white lg:top-6" />
 
         {/* Kundenanmeldung */}
         <Button

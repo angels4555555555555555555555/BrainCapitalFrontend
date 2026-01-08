@@ -31,7 +31,7 @@ export const useQueryWithErrorToast = (options, errorMessage) => {
                 description: query.error.message,
             });
         }
-    }, [query.isError, query.error]);
+    }, [query.isError, query.error, errorMessage]);
 
     return query;
 };

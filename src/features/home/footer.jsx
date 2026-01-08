@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Left Section */}
         <img
-          src="/Logo!.png"
+          src="/logo.png"
           alt="RCH Capital Holding GMBH. Logo"
           className="w-30 h-auto mb-2"
         />

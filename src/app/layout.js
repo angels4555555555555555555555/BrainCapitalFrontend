@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "RCH Capital Holding GMBH",
   icons: {
-    icon: '/Logo!.png',
+    icon: '/logo.png',
   },
 };
 

@@ -139,7 +139,7 @@ export default function Header() {
                   </li>
                   <li className="hover:bg-[#5639A5] hover:text-white transition">
                     <Link
-                      href='/impressum'
+                      href='/Impressum'
                       onClick={() => { setMobileOpen(false); window.scrollTo(0, 0); }}
                       className="block px-4 py-2"
                     >
@@ -258,9 +258,9 @@ export default function Header() {
                 </li>
                 <li>
                   <Link 
-                    href="/impressum" 
+                    href="/Impressum" 
                     onClick={() => { setMobileOpen(false); window.scrollTo(0, 0); }} 
-                    className={`${isActive('/impressum') ? 'text-[#5639A5] bg-[#5639A5]/10' : 'text-gray-700'} block py-3 px-4 rounded-lg hover:bg-[#5639A5]/10 hover:text-[#5639A5] transition-all font-medium`}
+                    className={`${isActive('/Impressum') ? 'text-[#5639A5] bg-[#5639A5]/10' : 'text-gray-700'} block py-3 px-4 rounded-lg hover:bg-[#5639A5]/10 hover:text-[#5639A5] transition-all font-medium`}
                   >
                     Impressum
                   </Link>

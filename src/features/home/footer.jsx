@@ -17,7 +17,7 @@ export default function Footer() {
               Home
             </button>
           </a>
-          <Link href="/impressum">
+          <Link href="/Impressum">
             <button className="border border-gray-400 text-gray-600 px-6 py-2 font-bold rounded-lg text-lg hover:bg-gray-100 transition">
               Impressum
             </button>

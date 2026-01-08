@@ -51,7 +51,7 @@ export const Footer = () => {
       </div>
       <div className="flex flex-col md:flex-row items-center gap-6 justify-center mt-[18px]">
         <p className="text-[14px]/[20px]">
-          <Link href="/impressum">
+          <Link href="/Impressum">
             <strong className="font-bold">Impressum</strong>
           </Link>
         </p>

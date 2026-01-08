@@ -49,7 +49,7 @@ export default function Home() {
               Als Teil einer größeren Holding, die an zahlreichen Unternehmen beteiligt ist und aktiv Start-ups sowie Wachstumsunternehmen fördert, liegt unser wirtschaftlicher Schwerpunkt dort, wo nachhaltige Wertschöpfung entsteht: am Kapitalmarkt. Insbesondere die strukturierte Vorbereitung und Begleitung von Unternehmen bis zum Börsengang stellt den zentralen Hebel für Wachstum und Ertragssteigerung dar.
             </p>
             <p>
-              Unser Zweitstandort in Monheim am Rhein ist gezielt auf das IPO-Geschäft sowie strukturierte Fest- und Tagesgeldlösungen ausgerichtet. Dort bündeln wir unsere operative Expertise in der Kapitalmarktvorbereitung, Investorenstrukturierung und der Umsetzung sicherheitsorientierter Anlagekonzepte.
+              Unsere Zweigniederlassung am Potsdamer Platz im Sony Center, Berlin, ist gezielt auf das IPO-Geschäft sowie auf strukturierte Fest- und Tagesgeldlösungen ausgerichtet. Dort bündeln wir unsere operative Expertise in der Kapitalmarktvorbereitung, der Investorenstrukturierung sowie in der Umsetzung sicherheitsorientierter Anlage- und Liquiditätskonzepte für Unternehmen und Investoren.
             </p>
             <p>
               Unser Anspruch ist es, Unternehmen und Investoren in entscheidenden Marktphasen professionell zu begleiten und substanziellen Mehrwert durch Kapitalmarktzugang und stabile Ertragsmodelle zu schaffen.
@@ -87,10 +87,7 @@ export default function Home() {
         copy={
           <>
             <p>
-              Als erfahrene Finanzberater entwickeln wir strukturierte und skalierbare Finanzlösungen, die konsequent auf Wertsteigerung und Kapitalmarktfähigkeit ausgerichtet sind. Unser Ansatz verbindet fundierte Analyse, unternehmerisches Denken und eine klare Fokussierung auf nachhaltige Renditepotenziale.
-            </p>
-            <p>
-              Durch kontinuierliche Marktbeobachtung und die aktive Anpassung an Kapitalmarkt- und IPO-relevante Entwicklungen stellen wir sicher, dass unsere Strategien aktuellen regulatorischen und wirtschaftlichen Anforderungen entsprechen. Ziel ist es, Unternehmen und Investoren in entscheidenden Phasen des Wachstums professionell zu begleiten und langfristigen Mehrwert durch Kapitalmarktzugang, Strukturierung und effiziente Allokation von Kapital zu schaffen.
+              Unser Ansatz verbindet sicherheitsorientierte Fest- und Tagesgeldlösungen mit gezielten Kapitalmarkt- und IPO-Strategien. So schaffen wir eine ausgewogene Struktur aus Stabilität, Liquidität und Wachstumsperspektiven, abgestimmt auf die individuellen Ziele unserer Mandanten.  Als erfahrene Finanzberater entwickeln wir maßgeschneiderte Finanzstrategien, die sowohl dem Kapitalerhalt als auch der kontrollierten Nutzung von Marktchancen dienen. Durch kontinuierliche Marktbeobachtung und die laufende Anpassung unserer Konzepte stellen wir sicher, dass sowohl sichere Anlageformen als auch vorbörsliche Investitionsmöglichkeiten professionell strukturiert und transparent begleitet werden.  Unser Ziel ist es, langfristige Werte zu schaffen, Risiken klar darzustellen und Mandanten auf Basis von Vertrauen, Transparenz und Kapitalmarktexpertise bei der Erreichung ihrer finanziellen Ziele zu begleiten.
             </p>
           </>
         }
@@ -119,7 +116,7 @@ export default function Home() {
               ANERKANNTE SPITZENLEISTUNGEN
             </p>
             <p className="text-muted-foreground mt-8 text-center leading-relaxed font-light text-lg">
-             Unser Team wurde mit renommierten Auszeichnungen und maßgeblichen Akkreditierungen der Finanzbranche ausgezeichnet, die für fachliche Exzellenz, Verlässlichkeit und Professionalität stehen. Diese Anerkennungen sind das Ergebnis kontinuierlicher Qualifikation, hoher Qualitätsstandards und eines klaren Anspruchs an verantwortungsvolle Beratung. So schaffen wir Vertrauen und eine belastbare Grundlage für langfristige Partnerschaften.
+             Unser Team verfügt über anerkannte Auszeichnungen sowie relevante Akkreditierungen der Finanzbranche, die unsere fachliche Qualifikation, strukturierten Prozesse und professionelle Arbeitsweise dokumentieren. Diese Qualifikationen bilden eine belastbare Grundlage für fundierte Investitionsentscheidungen und eine verantwortungsvolle Begleitung von Kapital.  Durch kontinuierliche fachliche Weiterbildung, die Einhaltung hoher Qualitäts- und Compliance-Standards sowie die fortlaufende Anpassung an regulatorische und marktwirtschaftliche Anforderungen gewährleisten wir eine verlässliche, transparente und investorenorientierte Beratung.
             </p>
           </div>
           <Awards />

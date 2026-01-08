@@ -50,7 +50,7 @@ export const useMultiQueryWithErrorToast = (queriesConfig = [], errorLabels = []
                 });
             }
         });
-    }, [queries]);
+    }, [queries, errorLabels]);
 
     return queries;
 };
@@ -66,7 +66,7 @@ export const useInfiniteQueryWithErrorToast = (options, errorMessage = "Failed t
                 description: query.error.message,
             });
         }
-    }, [query.isError, query.error]);
+    }, [query.isError, query.error, errorMessage]);
 
     return query;
 };

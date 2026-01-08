@@ -43,7 +43,7 @@ export default function Page() {
 
     useEffect(() => {
         refetchProfile();
-    }, []);
+    }, [refetchProfile]);
 
     const onSubmit = (values) => {
         updatePassword(values);

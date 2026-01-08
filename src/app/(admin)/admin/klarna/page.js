@@ -27,7 +27,7 @@ export default function Page() {
         if (data?.klarnaPrice) {
             form.setFieldValue("price", String(data.klarnaPrice));
         }
-    }, [data]);
+    }, [data, form]);
 
     const { mutate: updateKlarna, isPending: isUpdating } = useUpdateKlarna(() => {
         queryClient.invalidateQueries(["klarna"]);

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Awards from "@/features/home/awards";
 import Contact from "@/features/home/contact";
 import FeatureCards from "@/features/home/feature-cards";
@@ -29,9 +30,9 @@ export default function Home() {
           </div>
           <FeatureCards />
           <div className="text-center mt-18">
-            <a href="/#Karriere" className="px-6 py-4 text-white rounded-lg bg-[#5639A5] font-bold">
+            <Link href="/#Karriere" className="px-6 py-4 text-white rounded-lg bg-[#5639A5] font-bold">
               Konsultation buchen
-            </a>
+            </Link>
           </div>
         </div>
       </section>

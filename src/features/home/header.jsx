@@ -134,7 +134,7 @@ export default function Header() {
                       onClick={() => { setMobileOpen(false); window.scrollTo(0, 0); }}
                       className="block px-4 py-2"
                     >
-                      Arbitrage
+                      Fest - und Tagesgeld
                     </Link>
                   </li>
                   <li className="hover:bg-[#5639A5] hover:text-white transition">
@@ -253,7 +253,7 @@ export default function Header() {
                     onClick={() => { setMobileOpen(false); window.scrollTo(0, 0); }} 
                     className={`${isActive('/arbitrage') ? 'text-[#5639A5] bg-[#5639A5]/10' : 'text-gray-700'} block py-3 px-4 rounded-lg hover:bg-[#5639A5]/10 hover:text-[#5639A5] transition-all font-medium`}
                   >
-                    Arbitrage
+                    Fest - und Tagesgeld
                   </Link>
                 </li>
                 <li>

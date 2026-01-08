@@ -14,7 +14,10 @@ const Impressum = () => {
         <p>91056 Erlangen</p>
         <p>Deutschland</p>
         <br />
-        <p>Potsdamer Str. 2, 10785 Berlin,</p>
+        <p>Zweigniederlassung</p>
+        <br />
+        <p>Potsdamer Str. 2,</p>
+        <p>10785 Berlin,</p>
         <p>Deutschland</p>
         <p className="mt-10">Telefon:</p>
         <p>0305199994482</p>

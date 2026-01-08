@@ -10,9 +10,15 @@ export default function Contact() {
           <br />
           Deutschland
           <br />
+          <br />
           Zweigniederlassung
           <br />
-          RCH Capital Holding GMBH.
+          <br />
+          <p>Potsdamer Str. 2,</p>
+          <p>10785 Berlin,</p>
+          <p>Deutschland</p>
+          <br />
+          RCH Capital Holding GMBH
         </p>
         <div className="mt-4 space-y-8 text-muted-foreground text-lg font-light">
           <p>0305199994482</p>

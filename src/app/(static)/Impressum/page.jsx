@@ -13,9 +13,11 @@ const Impressum = () => {
         <p>Sankt Michael 29</p>
         <p>91056 Erlangen</p>
         <p>Deutschland</p>
+        <br />
+        <p>Potsdamer Str. 2, 10785 Berlin,</p>
+        <p>Deutschland</p>
         <p className="mt-10">Telefon:</p>
-        <p>+49 32221807849</p>
-        <p className="text-2xl">+49 32221807849</p>
+        <p>0305199994482</p>
         <p className="mt-10">E-Mail:</p>
         <p>info@rch-capital-holding.com</p>
         <p className="mt-10">Registergericht:</p>
@@ -29,8 +31,15 @@ const Impressum = () => {
           <br />
           Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Knut Ropte
           (Anschrift wie oben) Streitschlichtung: Die Europäische Kommission
-          stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a className="text-[#5538A4]" href="https://consumer-redress.ec.europa.eu/index_de">https://consumer-redress.ec.europa.eu/index_de</a> Wir sind nicht verpflichtet, an Streitbeilegungsverfahren
-          vor einer Verbraucherschlichtungsstelle teilzunehmen.
+          stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
+          <a
+            className="text-[#5538A4]"
+            href="https://consumer-redress.ec.europa.eu/index_de"
+          >
+            https://consumer-redress.ec.europa.eu/index_de
+          </a>{" "}
+          Wir sind nicht verpflichtet, an Streitbeilegungsverfahren vor einer
+          Verbraucherschlichtungsstelle teilzunehmen.
         </p>
         <p className="mb-24">
           Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen

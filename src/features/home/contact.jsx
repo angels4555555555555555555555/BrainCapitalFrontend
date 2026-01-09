@@ -21,7 +21,7 @@ export default function Contact() {
           RCH Capital Holding GMBH
         </p>
         <div className="mt-4 space-y-8 text-muted-foreground text-lg font-light">
-          <p>0305199994482</p>
+          <p>030519994482</p>
           <p>info@rch-capital-holding.com</p>
         </div>
       </div>

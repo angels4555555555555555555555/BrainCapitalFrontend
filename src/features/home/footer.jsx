@@ -60,7 +60,7 @@ export default function Footer() {
                 ></path>
               </svg>
               <span className="font-bold">Telefon</span>
-              <p className="text-gray-600 text-base">0305199994482</p>
+              <p className="text-gray-600 text-base">030519994482</p>
             </div>
           </div>
         </div>

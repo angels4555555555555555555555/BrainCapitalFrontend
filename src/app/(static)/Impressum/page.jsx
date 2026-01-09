@@ -20,7 +20,7 @@ const Impressum = () => {
         <p>10785 Berlin,</p>
         <p>Deutschland</p>
         <p className="mt-10">Telefon:</p>
-        <p>0305199994482</p>
+        <p>030519994482</p>
         <p className="mt-10">E-Mail:</p>
         <p>info@rch-capital-holding.com</p>
         <p className="mt-10">Registergericht:</p>

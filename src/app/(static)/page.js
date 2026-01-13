@@ -163,7 +163,7 @@ export default function Home() {
         data-termly-iframe-id="termly-iframe-0"
         style={{ display: "block" }}
         data-autoblock-ignore="1"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2586.98059972991!2d10.9454587!3d49.579254899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a201fee8a3b80f%3A0x963ffc23b12ebe60!2sSt.%20Michael%2029%2C%2091056%20Erlangen%2C%20Germany!5e0!3m2!1sen!2s!4v1767283243135!5m2!1sen!2s"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.286268866715!2d13.3723736!3d52.5101582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851c9c01cf5df%3A0x455516431cbe2511!2sPotsdamer%20Str.%202%2C%2010785%20Berlin%2C%20Germany!5e0!3m2!1sen!2s!4v1768313332804!5m2!1sen!2s"
         title="Google Maps Location"
       ></iframe>
 

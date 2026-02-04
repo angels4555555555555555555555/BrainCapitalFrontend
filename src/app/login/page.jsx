@@ -112,10 +112,10 @@ const Page = () => {
         </div>
       </Modal>
 
-      <div className="flex flex-col md:flex-row relative">
-        <img src="/logo.png" alt="Logo" className="absolute w-20 top-3 left-10 z-1" />
+      <div className="flex flex-col md:flex-row relative min-h-screen">
+        <img src="/logo.png" alt="Logo" className="absolute w-20 top-0 md:top-3 left-3 md:left-10 z-1" />
 
-        <div className="md:flex h-screen lg:w-[45.833%] hidden md:w-[50%] w-full">
+        <div className="md:flex h-screen lg:w-[45.833%] hidden md:w-[50%] w-full items-center justify-center">
           <img
             src="/spaceX.webp"
             alt="Hintergrundbild Anmeldung"
@@ -123,7 +123,7 @@ const Page = () => {
           />
         </div>
 
-        <div className="flex flex-1 md:w-[50%] w-full flex-col gap-6 md:gap-[30px] justify-center lg:px-[12.361vw] md:px-[8.252vw] px-[16px]">
+        <div className="flex flex-1 md:mt-0 mt-4 md:w-[50%] w-full flex-col gap-6 md:gap-[30px] justify-center lg:px-[12.361vw] md:px-[8.252vw] px-[16px]">
           <div className="flex flex-col md:gap-5 gap-3 mt-16">
             <h2 className="font-bold text-[24px]/[130%] lg:text-[36px]/[130%]">
               Willkommen bei RCH Capital Holding GMBH

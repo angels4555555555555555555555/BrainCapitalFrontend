@@ -2,16 +2,30 @@
 
 import React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Setting from "../../assets/icons/sidebar/setting";
 import Usermanagement from "../../assets/icons/sidebar/usermanagement";
 import Klarna from "../../assets/icons/sidebar/klarna";
+import Tagesgeld from "../../assets/icons/sidebar/tagesgeld";
 import Logout from "../../assets/icons/Logout";
+import { useAdminLogout } from "@/hooks/auth";
+import LoadingBackdrop from "@/features/common/LoadingBackdrop";
 
 const BASE = "/admin";
 
 const Sidebar = ({ openMenu, setOpenMenu }) => {
   const pathname = usePathname();
+  const router = useRouter();
+
+  const { mutate: logoutAdmin, isPending: isAdminLoggingOut } = useAdminLogout(
+    () => {
+      router.push("/login/admin");
+    }
+  );
+
+  const handleLogout = () => {
+    logoutAdmin();
+  };
 
   const options = [
     {
@@ -20,11 +34,13 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
       icon: Usermanagement,
     },
     { name: "SpaceX", route: "/klarna", icon: Klarna },
+    { name: "Tagesgeld", route: "/tagesgeld", icon: Tagesgeld },
     { name: "Einstellungen", route: "/setting", icon: Setting },
   ];
 
   return (
     <>
+      {isAdminLoggingOut && <LoadingBackdrop />}
       <div
         className={`w-full md:w-[250px] md:h-[calc(100dvh-104px)] bg-black md:border-t md:border-[#545454] p-4 ${
           openMenu ? "h-fit absolute top-[97px] z-10" : "hidden"
@@ -58,6 +74,7 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
           })}
         </div>
         <div
+          onClick={handleLogout}
           className={`flex md:hidden items-center justify-center size-[48px] rounded-full bg-[#FFFFFF29] cursor-pointer my-8`}
         >
           <Logout className={`text-white size-[24px]`} />

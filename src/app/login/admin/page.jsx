@@ -41,7 +41,7 @@ export default function AdminLoginPage() {
   return (
     <>
       {isPending && <LoadingBackdrop />}
-      <div className="admin relative h-[100vh] flex flex-col items-center gap-8">
+      <div className="admin relative h-[100vh] flex flex-col items-center gap-8 justify-center">
         {/* Hintergrund */}
         <img
           src="/spacex-scaled.jpg"
@@ -52,7 +52,7 @@ export default function AdminLoginPage() {
         />
 
         {/* Logo */}
-        <img src="/logo.png" className="w-20 lg:absolute lg:left-[77px] text-white lg:top-6" />
+        <img src="/logo.png" className="w-20 absolute top-6 lg:absolute lg:left-[77px] text-white lg:top-6" />
 
         {/* Kundenanmeldung */}
         <Button
@@ -68,7 +68,7 @@ export default function AdminLoginPage() {
         </Button>
 
         {/* Zentrale Anmeldekarte */}
-        <div className="w-full h-full flex flex-col items-center lg:justify-center lg:px-[30.306vw] md:px-[25.879vw] px-[16px] ">
+        <div className="w-full flex flex-col items-center lg:justify-center lg:px-[30.306vw] md:px-[25.879vw] px-[16px] ">
           <div
             className="w-full max-w-[560px]
                      lg:p-6 p-4 border border-[#525252] rounded-lg

@@ -44,12 +44,20 @@ const Page = () => {
           <h2 className="font-bold md:text-[24px]/[150%] text-[20px]/[150%]">
             Willkommen zurück, {data?.user?.firstName} {data?.user?.lastName}
           </h2>
-          <Link
-            href="/user/changePassword"
-            className="bg-black text-white px-4 py-2 font-medium text-[14px] hover:bg-gray-800 transition-colors"
-          >
-            Change password
-          </Link>
+          <div className="flex gap-3">
+            <Link
+              href="/user/tagesgeld"
+              className="bg-black text-white px-4 py-2 font-medium text-[14px] hover:bg-gray-800 transition-colors flex items-center justify-center"
+            >
+              Tagesgeld
+            </Link>
+            <Link
+              href="/user/changePassword"
+              className="bg-black text-white px-4 py-2 font-medium text-[14px] hover:bg-gray-800 transition-colors flex items-center justify-center"
+            >
+              Kennwort ändern
+            </Link>
+          </div>
         </div>
 
         <div className="flex flex-col md:flex-row gap-6">
@@ -123,13 +131,13 @@ const Page = () => {
             <h6 className="font-semibold text-[18px]/[150%]">
               Ihre SpaceX-Investmentdetails
             </h6>
-            <div className="flex gap-6 justify-between">
+            <div className="grid grid-cols-2 gap-6">
               <div>
                 <p className="font-medium text-[12px]/[100%] mb-1.5">
                   Ihre SpaceX-Anteile
                 </p>
                 <h4 className="font-semibold text-[20px]/[150%]">
-                  {data?.user?.shares}
+                  {data?.user?.shares} €
                 </h4>
               </div>
               <div>
@@ -137,18 +145,18 @@ const Page = () => {
                   Aktueller SpaceX-Preis
                 </p>
                 <h4 className="font-semibold text-[20px]/[150%]">
-                  € {data?.user?.klarnaPrice}
+                  {data?.user?.klarnaPrice} €
                 </h4>
               </div>
             </div>
             <hr className="border-1 border-[#E2E8F0]" />
-            <div className="flex gap-6 justify-between">
+            <div className="grid grid-cols-2 gap-6">
               <div>
                 <p className="font-medium text-[12px]/[100%] mb-1.5">
                   Gesamtwert
                 </p>
                 <h4 className="font-semibold text-[20px]/[150%]">
-                  € {data?.user?.totalShareValue}
+                  {data?.user?.totalShareValue} €
                 </h4>
               </div>
               <div>
@@ -156,7 +164,7 @@ const Page = () => {
                   SpaceX-Kaufpreis
                 </p>
                 <h4 className="font-semibold text-[20px]/[150%]">
-                  € {data?.user?.klarnaPurchasePrice}
+                  {data?.user?.klarnaPurchasePrice} €
                 </h4>
               </div>
             </div>

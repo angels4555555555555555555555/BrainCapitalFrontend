@@ -2,13 +2,15 @@
 import React from "react";
 import Logout from "../../assets/icons/Logout";
 import BurgerIcon from "../../assets/icons/BurgerIcon";
-import { useRouter } from "next/navigation";
+import BackArrow from "../../assets/icons/backArrow";
+import { useRouter, usePathname } from "next/navigation";
 import { X } from "lucide-react";
 import { useAdminLogout, useUserLogout } from "@/hooks/auth";
 import LoadingBackdrop from "@/features/common/LoadingBackdrop";
 
 const NavbarPortal = ({ admin = false, openMenu, setOpenMenu }) => {
   const router = useRouter();
+  const pathname = usePathname();
 
   const { mutate: logoutAdmin, isPending: isAdminLoggingOut } = useAdminLogout(
     () => {
@@ -41,28 +43,42 @@ const NavbarPortal = ({ admin = false, openMenu, setOpenMenu }) => {
           <img src="/logo.png" alt="" className="w-20"/>
         )}
 
-        <div
-          className={`flex items-center justify-center p-3 rounded-full bg-black
-            admin && "hidden md:flex"
-          }`}
-        >
-          <Logout onClick={handleLogout} className="text-white size-[26px]" />
-        </div>
-
-        {admin && (
-          <div className="md:hidden flex items-center justify-center size-[48px] cursor-pointer">
-            {openMenu ? (
-              <X
-                onClick={() => setOpenMenu(!openMenu)}
-                className="text-white size-[24px]"
-              />
-            ) : (
-              <BurgerIcon
-                onClick={() => setOpenMenu(!openMenu)}
-                className="text-white size-[24px]"
-              />
+        {!admin ? (
+          <div className="flex gap-3 items-center">
+            {pathname !== "/user" && (
+              <div
+                className="flex items-center justify-center p-3 rounded-full bg-black cursor-pointer size-[48px]"
+                onClick={() => router.back()}
+              >
+                <BackArrow className="text-white size-[26px]" />
+              </div>
             )}
+            <div
+              className="flex items-center justify-center p-3 rounded-full bg-black cursor-pointer size-[48px]"
+              onClick={handleLogout}
+            >
+              <Logout className="text-white size-[26px]" />
+            </div>
           </div>
+        ) : (
+          <>
+            <div className="hidden md:flex items-center justify-center p-3 rounded-full bg-black cursor-pointer">
+              <Logout onClick={handleLogout} className="text-white size-[26px]" />
+            </div>
+            <div className="md:hidden p-3 rounded-full bg-black flex items-center justify-center size-[48px] cursor-pointer">
+              {openMenu ? (
+                <X
+                  onClick={() => setOpenMenu(!openMenu)}
+                  className="text-white size-[24px]"
+                />
+              ) : (
+                <BurgerIcon
+                  onClick={() => setOpenMenu(!openMenu)}
+                  className="text-white size-[24px]"
+                />
+              )}
+            </div>
+          </>
         )}
       </div>
     </>

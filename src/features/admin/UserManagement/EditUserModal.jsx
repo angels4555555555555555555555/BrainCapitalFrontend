@@ -37,6 +37,10 @@ const EditUserModal = ({ opened, onClose, currentUser: id }) => {
       klarnaPrice: "",
       email: "",
       password: "",
+      bank: "",
+      laufzeit: "",
+      betrag: "",
+      zinsatz: "",
     },
     validate: {
       firstName: (v) => (v.trim().length ? null : "Vorname ist erforderlich"),
@@ -73,6 +77,10 @@ const EditUserModal = ({ opened, onClose, currentUser: id }) => {
       },
       email: (v) =>
         /^\S+@\S+\.\S+$/.test(v) ? null : "Ungültige E-Mail-Adresse",
+      bank: (v) => (v.trim().length ? null : "Bank ist erforderlich"),
+      laufzeit: (v) => (v.trim().length ? null : "Laufzeit ist erforderlich"),
+      betrag: (v) => (v.trim().length ? null : "Betrag ist erforderlich"),
+      zinsatz: (v) => (v.trim().length ? null : "Zinsatz ist erforderlich"),
     },
   });
 
@@ -88,6 +96,10 @@ const EditUserModal = ({ opened, onClose, currentUser: id }) => {
         klarnaPurchasePrice,
         klarnaPrice,
         email,
+        bank,
+        laufzeit,
+        betrag,
+        zinsatz,
       } = data?.user;
 
       form.setValues({
@@ -101,6 +113,10 @@ const EditUserModal = ({ opened, onClose, currentUser: id }) => {
         klarnaPrice,
         email,
         password: "", // leer lassen
+        bank: bank || "",
+        laufzeit: laufzeit || "",
+        betrag: betrag || "",
+        zinsatz: zinsatz || "",
       });
     }
   }, [data]);
@@ -189,6 +205,44 @@ const EditUserModal = ({ opened, onClose, currentUser: id }) => {
             label="Passwort"
             placeholder="(Leer lassen, um es nicht zu ändern)"
             {...form.getInputProps("password")}
+          />
+
+          {/* Tagesgeld Section */}
+          <div className="col-span-2 mt-4 mb-2">
+            <h3 className="text-[16px] font-semibold text-[#191919] border-b pb-2">
+              Tagesgeld-Informationen
+            </h3>
+          </div>
+          
+          <TextInput
+            label="Bank"
+            placeholder="z.B. Deutsche Bank"
+            withAsterisk
+            {...form.getInputProps("bank")}
+          />
+          <TextInput
+            label="Laufzeit (Duration)"
+            placeholder="z.B. 12"
+            rightSection={<span className="text-gray-500 text-sm"></span>}
+            rightSectionPointerEvents="none"
+            withAsterisk
+            {...form.getInputProps("laufzeit")}
+          />
+          <TextInput
+            label="Betrag (Amount)"
+            placeholder="z.B. 5000"
+            rightSection={<span className="text-gray-500 text-sm">EUR</span>}
+            rightSectionPointerEvents="none"
+            withAsterisk
+            {...form.getInputProps("betrag")}
+          />
+          <TextInput
+            label="Zinsatz (Interest Rate)"
+            placeholder="z.B. 3.5"
+            rightSection={<span className="text-gray-500 text-sm">%</span>}
+            rightSectionPointerEvents="none"
+            withAsterisk
+            {...form.getInputProps("zinsatz")}
           />
 
           <Button

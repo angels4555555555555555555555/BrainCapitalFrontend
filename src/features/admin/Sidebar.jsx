@@ -6,7 +6,6 @@ import { usePathname, useRouter } from "next/navigation";
 import Setting from "../../assets/icons/sidebar/setting";
 import Usermanagement from "../../assets/icons/sidebar/usermanagement";
 import Klarna from "../../assets/icons/sidebar/klarna";
-import Tagesgeld from "../../assets/icons/sidebar/tagesgeld";
 import Logout from "../../assets/icons/Logout";
 import { useAdminLogout } from "@/hooks/auth";
 import LoadingBackdrop from "@/features/common/LoadingBackdrop";
@@ -34,7 +33,6 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
       icon: Usermanagement,
     },
     { name: "SpaceX", route: "/klarna", icon: Klarna },
-    { name: "Tagesgeld", route: "/tagesgeld", icon: Tagesgeld },
     { name: "Einstellungen", route: "/setting", icon: Setting },
   ];
 

@@ -44,20 +44,12 @@ const Page = () => {
           <h2 className="font-bold md:text-[24px]/[150%] text-[20px]/[150%]">
             Willkommen zurück, {data?.user?.firstName} {data?.user?.lastName}
           </h2>
-          <div className="flex gap-3">
-            <Link
-              href="/user/tagesgeld"
-              className="bg-black hidden text-white px-4 py-2 font-medium text-[14px] hover:bg-gray-800 transition-colors items-center justify-center"
-            >
-              Tagesgeld
-            </Link>
-            <Link
-              href="/user/changePassword"
-              className="bg-black text-white px-4 py-2 font-medium text-[14px] hover:bg-gray-800 transition-colors flex items-center justify-center"
-            >
-              Kennwort ändern
-            </Link>
-          </div>
+          <Link
+            href="/user/changePassword"
+            className="bg-black text-white px-4 py-2 font-medium text-[14px] hover:bg-gray-800 transition-colors flex items-center justify-center"
+          >
+            Kennwort ändern
+          </Link>
         </div>
 
         <div className="flex flex-col md:flex-row gap-6">
@@ -168,6 +160,69 @@ const Page = () => {
                 </h4>
               </div>
             </div>
+          </div>
+
+          {/* Tagesgeld Section */}
+          <div className="p-5 bg-white md:w-[312px] w-full flex flex-col gap-6">
+            <h6 className="font-semibold text-[18px]/[150%]">
+              Tagesgeld-Informationen
+            </h6>
+            {(data?.user?.bank && data?.user?.bank.trim() !== "") || 
+             (data?.user?.laufzeit && data?.user?.laufzeit.trim() !== "") || 
+             (data?.user?.betrag && data?.user?.betrag.trim() !== "") || 
+             (data?.user?.zinsatz && data?.user?.zinsatz.trim() !== "") ? (
+              <>
+                <div className="grid grid-cols-2 gap-6">
+                  {data?.user?.bank && data?.user?.bank.trim() !== "" && (
+                    <div>
+                      <p className="font-medium text-[12px]/[100%] mb-1.5">
+                        Bank
+                      </p>
+                      <h4 className="font-semibold text-[20px]/[150%]">
+                        {data?.user?.bank}
+                      </h4>
+                    </div>
+                  )}
+                  {data?.user?.laufzeit && data?.user?.laufzeit.trim() !== "" && (
+                    <div>
+                      <p className="font-medium text-[12px]/[100%] mb-1.5">
+                        Laufzeit (Duration)
+                      </p>
+                      <h4 className="font-semibold text-[20px]/[150%]">
+                        {data?.user?.laufzeit} Monate
+                      </h4>
+                    </div>
+                  )}
+                </div>
+                <hr className="border-1 border-[#E2E8F0]" />
+                <div className="grid grid-cols-2 gap-6">
+                  {data?.user?.betrag && data?.user?.betrag.trim() !== "" && (
+                    <div>
+                      <p className="font-medium text-[12px]/[100%] mb-1.5">
+                        Betrag (Amount)
+                      </p>
+                      <h4 className="font-semibold text-[20px]/[150%]">
+                        {data?.user?.betrag} €
+                      </h4>
+                    </div>
+                  )}
+                  {data?.user?.zinsatz && data?.user?.zinsatz.trim() !== "" && (
+                    <div>
+                      <p className="font-medium text-[12px]/[100%] mb-1.5">
+                        Zinsatz (Interest Rate)
+                      </p>
+                      <h4 className="font-semibold text-[20px]/[150%]">
+                        {data?.user?.zinsatz}%
+                      </h4>
+                    </div>
+                  )}
+                </div>
+              </>
+            ) : (
+              <p className="text-[14px] text-gray-500">
+                Keine Tagesgeld-Informationen verfügbar.
+              </p>
+            )}
           </div>
         </div>
       </div>

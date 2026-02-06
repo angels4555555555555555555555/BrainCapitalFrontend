@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-    baseURL: "https://backend.rch-capital-holding.com/api",
+    baseURL: "http://localhost:5000/api",
     withCredentials: true, 
 });
 

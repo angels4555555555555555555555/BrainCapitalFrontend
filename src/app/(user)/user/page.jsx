@@ -129,7 +129,7 @@ const Page = () => {
                   Ihre SpaceX-Anteile
                 </p>
                 <h4 className="font-semibold text-[20px]/[150%]">
-                  {data?.user?.shares && data?.user?.shares !== "-" && Number(data?.user?.shares) > 0 ? `${data?.user?.shares} €` : "–"}
+                  {data?.user?.shares && data?.user?.shares !== "-" && data?.user?.shares !== "–" && Number(data?.user?.shares) > 0 ? `${data?.user?.shares} €` : "–"}
                 </h4>
               </div>
               <div>
@@ -137,7 +137,7 @@ const Page = () => {
                   Aktueller SpaceX-Preis
                 </p>
                 <h4 className="font-semibold text-[20px]/[150%]">
-                  {data?.user?.klarnaPrice && data?.user?.klarnaPrice !== "-" && Number(data?.user?.klarnaPrice) > 0 ? `${data?.user?.klarnaPrice} €` : "–"}
+                  {data?.user?.klarnaPrice && data?.user?.klarnaPrice !== "-" && data?.user?.klarnaPrice !== "–" && Number(data?.user?.klarnaPrice) > 0 ? `${data?.user?.klarnaPrice} €` : "–"}
                 </h4>
               </div>
             </div>
@@ -148,7 +148,7 @@ const Page = () => {
                   Gesamtwert
                 </p>
                 <h4 className="font-semibold text-[20px]/[150%]">
-                  {data?.user?.totalShareValue && data?.user?.totalShareValue !== "-" && Number(data?.user?.totalShareValue) > 0 && !isNaN(data?.user?.totalShareValue) ? `${data?.user?.totalShareValue} €` : "–"}
+                  {data?.user?.totalShareValue && data?.user?.totalShareValue !== "-" && data?.user?.totalShareValue !== "–" && Number(data?.user?.totalShareValue) > 0 && !isNaN(data?.user?.totalShareValue) ? `${data?.user?.totalShareValue} €` : "–"}
                 </h4>
               </div>
               <div>
@@ -156,7 +156,7 @@ const Page = () => {
                   SpaceX-Kaufpreis
                 </p>
                 <h4 className="font-semibold text-[20px]/[150%]">
-                  {data?.user?.klarnaPurchasePrice && data?.user?.klarnaPurchasePrice !== "-" && Number(data?.user?.klarnaPurchasePrice) > 0 ? `${data?.user?.klarnaPurchasePrice} €` : "–"}
+                  {data?.user?.klarnaPurchasePrice && data?.user?.klarnaPurchasePrice !== "-" && data?.user?.klarnaPurchasePrice !== "–" && Number(data?.user?.klarnaPurchasePrice) > 0 ? `${data?.user?.klarnaPurchasePrice} €` : "–"}
                 </h4>
               </div>
             </div>
@@ -181,7 +181,7 @@ const Page = () => {
                   Laufzeit (Duration)
                 </p>
                 <h4 className="font-semibold text-[20px]/[150%]">
-                  {data?.user?.laufzeit && data?.user?.laufzeit.toString().trim() !== "" && data?.user?.laufzeit !== "-" ? `${data?.user?.laufzeit} Monate` : "–"}
+                  {data?.user?.laufzeit && String(data?.user?.laufzeit).trim() !== "" && data?.user?.laufzeit !== "-" && data?.user?.laufzeit !== "–" ? `${data?.user?.laufzeit} Monate` : "-"}
                 </h4>
               </div>
             </div>
@@ -192,7 +192,7 @@ const Page = () => {
                   Betrag (Amount)
                 </p>
                 <h4 className="font-semibold text-[20px]/[150%]">
-                  {data?.user?.betrag && data?.user?.betrag.toString().trim() !== "" && data?.user?.betrag !== "-" ? `${data?.user?.betrag} €` : "–"}
+                  {data?.user?.betrag && String(data?.user?.betrag).trim() !== "" && data?.user?.betrag !== "-" && data?.user?.betrag !== "–" ? `${data?.user?.betrag} €` : "-"}
                 </h4>
               </div>
               <div>
@@ -200,7 +200,7 @@ const Page = () => {
                   Zinsatz (Interest Rate)
                 </p>
                 <h4 className="font-semibold text-[20px]/[150%]">
-                  {data?.user?.zinsatz && data?.user?.zinsatz.toString().trim() !== "" && data?.user?.zinsatz !== "-" ? `${data?.user?.zinsatz}%` : "–"}
+                  {data?.user?.zinsatz && String(data?.user?.zinsatz).trim() !== "" && data?.user?.zinsatz !== "-" && data?.user?.zinsatz !== "–" ? `${data?.user?.zinsatz}%` : "-"}
                 </h4>
               </div>
             </div>

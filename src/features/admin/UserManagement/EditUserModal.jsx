@@ -54,22 +54,21 @@ const EditUserModal = ({ opened, onClose, currentUser: id }) => {
       gender: (v) => (v ? null : "Geschlecht auswählen"),
       country: (v) => (v ? null : "Land auswählen"),
       shares: (v) => {
-        if (v === "" || v === null)
-          return "Geben Sie eine gültige, nicht-negative Zahl ein";
+        if (v === "" || v === null) return null; // Optional field
         const n = Number(v);
         if (!Number.isFinite(n) || n < 0)
           return "Geben Sie eine gültige, nicht-negative Zahl ein";
         return null;
       },
       klarnaPurchasePrice: (v) => {
-        if (v === "" || v === null) return "Kaufpreis ist erforderlich";
+        if (v === "" || v === null) return null; // Optional field
         const n = Number(v);
         if (!Number.isFinite(n) || n < 0)
           return "Geben Sie einen gültigen Kaufpreis ein";
         return null;
       },
       klarnaPrice: (v) => {
-        if (v === "" || v === null) return "Klarna-Preis ist erforderlich";
+        if (v === "" || v === null) return null; // Optional field
         const n = Number(v);
         if (!Number.isFinite(n) || n < 0)
           return "Geben Sie einen gültigen Klarna-Preis ein";
@@ -77,10 +76,6 @@ const EditUserModal = ({ opened, onClose, currentUser: id }) => {
       },
       email: (v) =>
         /^\S+@\S+\.\S+$/.test(v) ? null : "Ungültige E-Mail-Adresse",
-      bank: (v) => (v.trim().length ? null : "Bank ist erforderlich"),
-      laufzeit: (v) => (v.trim().length ? null : "Laufzeit ist erforderlich"),
-      betrag: (v) => (v.trim().length ? null : "Betrag ist erforderlich"),
-      zinsatz: (v) => (v.trim().length ? null : "Zinsatz ist erforderlich"),
     },
   });
 
@@ -178,22 +173,22 @@ const EditUserModal = ({ opened, onClose, currentUser: id }) => {
             {...form.getInputProps("country")}
           />
           <NumberInput
-            label="Klarna-Aktien"
+            label="SpaceX-Aktien (Optional)"
             hideControls
             min={0}
             {...form.getInputProps("shares")}
           />
           <NumberInput
-            label="Kaufpreis Klarna"
+            label="Kaufpreis SpaceX (Optional)"
             hideControls
             min={0}
             {...form.getInputProps("klarnaPurchasePrice")}
           />
           <NumberInput
-            label="Klarna-Preis"
-            placeholder="Klarna-Preis eingeben"
+            label="SpaceX-Preis (Optional)"
+            placeholder="SpaceX-Preis eingeben"
             hideControls
-            // min={0}
+            min={0}
             {...form.getInputProps("klarnaPrice")}
           />
           <TextInput
@@ -215,33 +210,29 @@ const EditUserModal = ({ opened, onClose, currentUser: id }) => {
           </div>
           
           <TextInput
-            label="Bank"
+            label="Bank (Optional)"
             placeholder="z.B. Deutsche Bank"
-            withAsterisk
             {...form.getInputProps("bank")}
           />
           <TextInput
-            label="Laufzeit (Duration)"
+            label="Laufzeit (Duration) (Optional)"
             placeholder="z.B. 12"
             rightSection={<span className="text-gray-500 text-sm"></span>}
             rightSectionPointerEvents="none"
-            withAsterisk
             {...form.getInputProps("laufzeit")}
           />
           <TextInput
-            label="Betrag (Amount)"
+            label="Betrag (Amount) (Optional)"
             placeholder="z.B. 5000"
             rightSection={<span className="text-gray-500 text-sm">EUR</span>}
             rightSectionPointerEvents="none"
-            withAsterisk
             {...form.getInputProps("betrag")}
           />
           <TextInput
-            label="Zinsatz (Interest Rate)"
+            label="Zinsatz (Interest Rate) (Optional)"
             placeholder="z.B. 3.5"
             rightSection={<span className="text-gray-500 text-sm">%</span>}
             rightSectionPointerEvents="none"
-            withAsterisk
             {...form.getInputProps("zinsatz")}
           />
 

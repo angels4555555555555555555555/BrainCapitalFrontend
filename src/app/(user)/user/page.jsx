@@ -129,7 +129,7 @@ const Page = () => {
                   Ihre SpaceX-Anteile
                 </p>
                 <h4 className="font-semibold text-[20px]/[150%]">
-                  {data?.user?.shares} €
+                  {data?.user?.shares && data?.user?.shares !== "-" && Number(data?.user?.shares) > 0 ? `${data?.user?.shares} €` : "–"}
                 </h4>
               </div>
               <div>
@@ -137,7 +137,7 @@ const Page = () => {
                   Aktueller SpaceX-Preis
                 </p>
                 <h4 className="font-semibold text-[20px]/[150%]">
-                  {data?.user?.klarnaPrice} €
+                  {data?.user?.klarnaPrice && data?.user?.klarnaPrice !== "-" && Number(data?.user?.klarnaPrice) > 0 ? `${data?.user?.klarnaPrice} €` : "–"}
                 </h4>
               </div>
             </div>
@@ -148,7 +148,7 @@ const Page = () => {
                   Gesamtwert
                 </p>
                 <h4 className="font-semibold text-[20px]/[150%]">
-                  {data?.user?.totalShareValue} €
+                  {data?.user?.totalShareValue && data?.user?.totalShareValue !== "-" && Number(data?.user?.totalShareValue) > 0 && !isNaN(data?.user?.totalShareValue) ? `${data?.user?.totalShareValue} €` : "–"}
                 </h4>
               </div>
               <div>
@@ -156,7 +156,7 @@ const Page = () => {
                   SpaceX-Kaufpreis
                 </p>
                 <h4 className="font-semibold text-[20px]/[150%]">
-                  {data?.user?.klarnaPurchasePrice} €
+                  {data?.user?.klarnaPurchasePrice && data?.user?.klarnaPurchasePrice !== "-" && Number(data?.user?.klarnaPurchasePrice) > 0 ? `${data?.user?.klarnaPurchasePrice} €` : "–"}
                 </h4>
               </div>
             </div>
@@ -167,62 +167,43 @@ const Page = () => {
             <h6 className="font-semibold text-[18px]/[150%]">
               Tagesgeld-Informationen
             </h6>
-            {(data?.user?.bank && data?.user?.bank.trim() !== "") || 
-             (data?.user?.laufzeit && data?.user?.laufzeit.trim() !== "") || 
-             (data?.user?.betrag && data?.user?.betrag.trim() !== "") || 
-             (data?.user?.zinsatz && data?.user?.zinsatz.trim() !== "") ? (
-              <>
-                <div className="grid grid-cols-2 gap-6">
-                  {data?.user?.bank && data?.user?.bank.trim() !== "" && (
-                    <div>
-                      <p className="font-medium text-[12px]/[100%] mb-1.5">
-                        Bank
-                      </p>
-                      <h4 className="font-semibold text-[20px]/[150%]">
-                        {data?.user?.bank}
-                      </h4>
-                    </div>
-                  )}
-                  {data?.user?.laufzeit && data?.user?.laufzeit.trim() !== "" && (
-                    <div>
-                      <p className="font-medium text-[12px]/[100%] mb-1.5">
-                        Laufzeit (Duration)
-                      </p>
-                      <h4 className="font-semibold text-[20px]/[150%]">
-                        {data?.user?.laufzeit} Monate
-                      </h4>
-                    </div>
-                  )}
-                </div>
-                <hr className="border-1 border-[#E2E8F0]" />
-                <div className="grid grid-cols-2 gap-6">
-                  {data?.user?.betrag && data?.user?.betrag.trim() !== "" && (
-                    <div>
-                      <p className="font-medium text-[12px]/[100%] mb-1.5">
-                        Betrag (Amount)
-                      </p>
-                      <h4 className="font-semibold text-[20px]/[150%]">
-                        {data?.user?.betrag} €
-                      </h4>
-                    </div>
-                  )}
-                  {data?.user?.zinsatz && data?.user?.zinsatz.trim() !== "" && (
-                    <div>
-                      <p className="font-medium text-[12px]/[100%] mb-1.5">
-                        Zinsatz (Interest Rate)
-                      </p>
-                      <h4 className="font-semibold text-[20px]/[150%]">
-                        {data?.user?.zinsatz}%
-                      </h4>
-                    </div>
-                  )}
-                </div>
-              </>
-            ) : (
-              <p className="text-[14px] text-gray-500">
-                Keine Tagesgeld-Informationen verfügbar.
-              </p>
-            )}
+            <div className="grid grid-cols-2 gap-6">
+              <div>
+                <p className="font-medium text-[12px]/[100%] mb-1.5">
+                  Bank
+                </p>
+                <h4 className="font-semibold text-[20px]/[150%]">
+                  {data?.user?.bank && data?.user?.bank.trim() !== "" ? data?.user?.bank : "–"}
+                </h4>
+              </div>
+              <div>
+                <p className="font-medium text-[12px]/[100%] mb-1.5">
+                  Laufzeit (Duration)
+                </p>
+                <h4 className="font-semibold text-[20px]/[150%]">
+                  {data?.user?.laufzeit && data?.user?.laufzeit.toString().trim() !== "" && data?.user?.laufzeit !== "-" ? `${data?.user?.laufzeit} Monate` : "–"}
+                </h4>
+              </div>
+            </div>
+            <hr className="border-1 border-[#E2E8F0]" />
+            <div className="grid grid-cols-2 gap-6">
+              <div>
+                <p className="font-medium text-[12px]/[100%] mb-1.5">
+                  Betrag (Amount)
+                </p>
+                <h4 className="font-semibold text-[20px]/[150%]">
+                  {data?.user?.betrag && data?.user?.betrag.toString().trim() !== "" && data?.user?.betrag !== "-" ? `${data?.user?.betrag} €` : "–"}
+                </h4>
+              </div>
+              <div>
+                <p className="font-medium text-[12px]/[100%] mb-1.5">
+                  Zinsatz (Interest Rate)
+                </p>
+                <h4 className="font-semibold text-[20px]/[150%]">
+                  {data?.user?.zinsatz && data?.user?.zinsatz.toString().trim() !== "" && data?.user?.zinsatz !== "-" ? `${data?.user?.zinsatz}%` : "–"}
+                </h4>
+              </div>
+            </div>
           </div>
         </div>
       </div>

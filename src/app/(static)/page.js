@@ -56,7 +56,7 @@ const strengths = [
 const faqs = [
   ["Wie läuft das Erstgespräch ab?", "In einem unverbindlichen Erstgespräch klären wir, wo Sie stehen und welche Struktur zu Ihren Zielen passt. Im Anschluss erhalten Sie eine klare Einordnung der nächsten Schritte."],
   ["Welche Leistungen bietet Brain Capital Asset an?", "Wir begleiten Sie in drei Kernbereichen: Kapitalmarkt & IPO, Fest- & Tagesgeld sowie individuelle Vermögensstrategien – jeweils abgestimmt auf Stabilität, Liquidität und Wachstum."],
-  ["Wo ist Brain Capital Asset ansässig?", "Wir sind mit Standorten in Erlangen und Berlin persönlich für Sie erreichbar und betreuen Mandate bundesweit."],
+  ["Wo ist Brain Capital Asset ansässig?", "Wir sind mit Standorten in Montabaur persönlich für Sie erreichbar und betreuen Mandate bundesweit."],
   ["Wie kann ich Kontakt aufnehmen?", "Sie erreichen uns telefonisch unter 030 519 994 482 oder per E-Mail an info@brain-capital-asset.com – alternativ nutzen Sie das Kontaktformular auf dieser Seite."],
 ];
 
@@ -112,7 +112,7 @@ export default function Home() {
               </a>
             </div>
             <div className="hero-trust">
-              <div><strong>2 Standorte</strong><span>Erlangen & Berlin</span></div>
+              <div><strong>2 Standorte</strong><span>Montabaur</span></div>
               <div><strong>3 Kompetenzfelder</strong><span>Ein abgestimmtes System</span></div>
               <div><strong>Persönlich</strong><span>Feste Ansprechpartner</span></div>
             </div>
@@ -165,7 +165,7 @@ export default function Home() {
           <div className="story-copy">
             <SectionHeading eyebrow="Brain Capital Asset" title="Finanzberatung mit unternehmerischer Perspektive" />
             <p>
-              Von Erlangen und Berlin aus begleiten wir Unternehmen und
+              Von Montabaur aus begleiten wir Unternehmen und
               Investoren in entscheidenden Finanzphasen. Unser Schwerpunkt liegt
               auf Kapitalmarkt- und IPO-Strategien sowie strukturierten Fest- und
               Tagesgeldlösungen.
@@ -186,10 +186,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" id="warum-rch">
+      <section className="section" id="warum-capitalbrain">
         <div className="site-container">
           <SectionHeading
-            eyebrow="Warum RCH"
+            eyebrow="Warum Capital Brain"
             title="Komplexität wird zu einer klaren nächsten Entscheidung"
             text="Unser Beratungsansatz ist strukturiert, verständlich und konsequent an Ihrem Mandat ausgerichtet."
           />
@@ -281,7 +281,7 @@ export default function Home() {
             <div className="contact-links">
               <a href="tel:+4930519994482"><span><Phone size={19} /></span><div><small>Telefon</small><strong>030 519 994 482</strong></div></a>
               <a href="mailto:info@brain-capital-asset.com"><span><Mail size={19} /></span><div><small>E-Mail</small><strong>info@brain-capital-asset.com</strong></div></a>
-              <div><span><MapPin size={19} /></span><div><small>Standorte</small><strong>Erlangen & Berlin</strong></div></div>
+              <div><span><MapPin size={19} /></span><div><small>Standorte</small><strong>Montabaur</strong></div></div>
             </div>
           </div>
           <form className="contact-form">
@@ -313,7 +313,7 @@ export default function Home() {
 
       <section className="office-strip">
         <div className="site-container office-grid">
-          <div><Building2 size={20} /><span><small>Hauptsitz</small><strong>Sankt Michael 29 · 91056 Erlangen</strong></span></div>
+          <div><Building2 size={20} /><span><small>Hauptsitz</small><strong>Bahnalle 11-13 56410 Deutschland Montabaur</strong></span></div>
           <div><Landmark size={20} /><span><small>Zweigniederlassung</small><strong>Potsdamer Str. 2 · 10785 Berlin</strong></span></div>
           <a href="https://maps.google.com/?q=Potsdamer+Str.+2,+10785+Berlin" target="_blank" rel="noreferrer">Auf Karte öffnen <ArrowRight size={16} /></a>
         </div>

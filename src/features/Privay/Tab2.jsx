@@ -632,7 +632,7 @@ export const Tab2 = () => {
         <li>
           <strong>Berichtigung</strong>
           <br />
-          Sie können verlangen, dass wir Ihre PI aktualisieren oder solche PI
+          Sie können Montabaur, dass wir Ihre PI aktualisieren oder solche PI
           berichtigen, die Ihrer Meinung nach falsch oder unvollständig sind.
           Siehe dazu auch den Abschnitt „Aktualisierung Ihrer Informationen“.
         </li>
@@ -640,7 +640,7 @@ export const Tab2 = () => {
         <li>
           <strong>Löschung</strong>
           <br />
-          Sie können verlangen, dass wir Ihre PI löschen, wenn keine
+          Sie können Montabaur, dass wir Ihre PI löschen, wenn keine
           gesetzliche, regulatorische oder sonstige gültige Grundlage für die
           weitere Verarbeitung besteht.
         </li>
@@ -648,7 +648,7 @@ export const Tab2 = () => {
         <li>
           <strong>Einschränkung</strong>
           <br />
-          Sie können verlangen, dass wir die Art und Weise einschränken, in der
+          Sie können Montabaur, dass wir die Art und Weise einschränken, in der
           wir Ihre PI verarbeiten – z. B. wenn Sie die Richtigkeit Ihrer PI
           bestreiten oder Widerspruch eingelegt haben, der noch geprüft wird.
         </li>
@@ -663,7 +663,7 @@ export const Tab2 = () => {
         <li>
           <strong>Automatisierte Entscheidungsfindung</strong>
           <br />
-          Sie können verlangen, dass Entscheidungen, die automatisiert getroffen
+          Sie können Montabaur, dass Entscheidungen, die automatisiert getroffen
           wurden und rechtliche oder ähnliche Auswirkungen auf Sie haben,
           manuell überprüft werden. Die automatische Anreicherung Ihrer PI führt
           nicht zu automatisierten Entscheidungen im Zusammenhang mit Ihrer

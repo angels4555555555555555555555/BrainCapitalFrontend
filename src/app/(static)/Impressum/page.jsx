@@ -18,12 +18,7 @@ const contactCards = [
   {
     icon: MapPin,
     label: "Hauptsitz",
-    content: <address className="not-italic">Sankt Michael 29<br />91056 Erlangen<br />Deutschland</address>,
-  },
-  {
-    icon: Building2,
-    label: "Zweigniederlassung",
-    content: <address className="not-italic">Potsdamer Str. 2<br />10785 Berlin<br />Deutschland</address>,
+    content: <address className="not-italic">Banhalle 11-13<br />5641 Montabaur<br /><br />Deutschland</address>,
   },
   {
     icon: Phone,
@@ -48,7 +43,7 @@ const legalSections = [
         <dt className="font-semibold text-[var(--muted)]">Registergericht</dt>
         <dd>Amtsgericht Fürth</dd>
         <dt className="font-semibold text-[var(--muted)]">Registernummer</dt>
-        <dd>HRB 20838</dd>
+        <dd>10165237</dd>
       </dl>
     ),
   },
@@ -127,10 +122,7 @@ export default function Impressum() {
       <main className="bg-[var(--surface)] text-[var(--ink)]">
         <section className="relative overflow-hidden bg-[var(--navy)] text-white">
           <div className="absolute inset-y-0 right-0 w-1/2 opacity-20 bg-[radial-gradient(circle_at_center,var(--gold),transparent_65%)]" />
-          <div className="site-container relative py-16 md:py-24">
-            <Link href="/" className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-[var(--gold)]">
-              <ArrowLeft size={16} /> Zurück zur Startseite
-            </Link>
+          <div className="site-container relative pt-24 pb-16 md:pt-32">
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[var(--gold)]">Rechtliche Informationen</p>
             <h1 className="max-w-3xl text-4xl md:text-6xl font-semibold tracking-[-0.04em]">Impressum</h1>
             <p className="mt-5 max-w-2xl text-base md:text-lg leading-7 text-white/70">
@@ -147,7 +139,7 @@ export default function Impressum() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4 mb-10 md:mb-14">
+          <div className="grid md:grid-cols-2 gap-4 mb-10 md:mb-14">
             {contactCards.map(({ icon: Icon, label, content }) => (
               <article key={label} className="rounded-[8px] border border-[var(--line)] bg-white p-6 md:p-7">
                 <div className="mb-5 flex size-10 items-center justify-center rounded-[6px] bg-[var(--gold)] text-[var(--navy)]">

@@ -16,7 +16,7 @@ import { useEffect, useState } from "react";
 const primaryLinks = [
   ["Leistungen", "/#leistungen"],
   ["Unternehmen", "/#unternehmen"],
-  ["Warum RCH", "/#warum-rch"],
+  ["Warum Capital Brain", "/#warum-capitalbrain"],
   ["Team", "/#team"],
   ["Impressum", "/Impressum"],
 ];

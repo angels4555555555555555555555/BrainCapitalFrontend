@@ -7,8 +7,7 @@ export default function Footer() {
       <div className="site-container footer-grid">
         <div className="footer-brand">
           <Link className="brand brand--footer" href="/">
-            <span className="brand-mark">RCH</span>
-            <span className="brand-name">Capital<br />Holding</span>
+            <img src="/Logo.png" className="w-20 bg-white" alt="" />
           </Link>
           <p>Präzise Finanzstrategien für Stabilität, Liquidität und nachhaltiges Wachstum.</p>
           <div className="footer-social">
@@ -17,7 +16,7 @@ export default function Footer() {
             <a href="#" aria-label="Facebook"><Facebook size={16} /></a>
           </div>
         </div>
-        <div className="footer-column"><span>Navigation</span><Link href="/#leistungen">Leistungen</Link><Link href="/#unternehmen">Unternehmen</Link><Link href="/#warum-rch">Warum RCH</Link><Link href="/#kontakt">Kontakt</Link></div>
+        <div className="footer-column"><span>Navigation</span><Link href="/#leistungen">Leistungen</Link><Link href="/#unternehmen">Unternehmen</Link><Link href="/#warum-rch">Warum Capital Brain</Link><Link href="/#kontakt">Kontakt</Link></div>
         <div className="footer-column"><span>Expertise</span><Link href="/verm-gensverwaltung">Vermögensverwaltung</Link><Link href="/ipo">Kapitalmarkt & IPO</Link><Link href="/arbitrage">Fest- & Tagesgeld</Link><Link href="/login">Kundenlogin</Link></div>
         <div className="footer-column footer-contact"><span>Direkter Kontakt</span><a href="tel:+4930519994482"><Phone size={15} />030 519 994 482</a><a href="mailto:info@brain-capital-asset.com"><Mail size={15} />E-Mail senden <ArrowUpRight size={14} /></a><Link href="/Impressum">Impressum</Link></div>
       </div>

@@ -1004,7 +1004,7 @@ export const Tab1 = () => {
         <br />
         <br />
         Soweit gesetzlich zulässig, behalten wir uns das Recht vor, für die
-        Ausübung Ihrer Rechte eine angemessene Gebühr zu verlangen.
+        Ausübung Ihrer Rechte eine angemessene Gebühr zu Montabaur.
         <br />
         <br />
         Wir können Sie um bestimmte Informationen bitten, um Ihre Identität zu
@@ -1021,10 +1021,10 @@ export const Tab1 = () => {
         <br />
         Je nach Gesetzgebung Ihres Landes können Sie einen bevollmächtigten
         Vertreter benennen, der in Ihrem Namen eine Anfrage schriftlich oder per
-        Vollmacht einreicht. Vor der Bearbeitung der Anfrage verlangen wir vom
+        Vollmacht einreicht. Vor der Bearbeitung der Anfrage Montabaur wir vom
         Bevollmächtigten einen Nachweis über die Autorisierung und können eine
         direkte Bestätigung Ihrer Identität und Autorisierung durch Sie selbst
-        verlangen.
+        Montabaur.
         <br />
         <br />
         Die Ausübung Ihrer Rechte in Bezug auf die Verarbeitung Ihrer PI hat

@@ -18,7 +18,7 @@ const contactCards = [
   {
     icon: MapPin,
     label: "Hauptsitz",
-    content: <address className="not-italic">Banhalle 11-13<br />5641 Montabaur<br /><br />Deutschland</address>,
+    content: <address className="not-italic">Banhalle 11-13<br />56410 Montabaur<br /><br />Deutschland</address>,
   },
   {
     icon: Phone,

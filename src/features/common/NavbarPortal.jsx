@@ -15,13 +15,13 @@ const NavbarPortal = ({ admin = false, openMenu, setOpenMenu }) => {
   const { mutate: logoutAdmin, isPending: isAdminLoggingOut } = useAdminLogout(
     () => {
       router.push("/login/admin");
-    }
+    },
   );
 
   const { mutate: logoutUser, isPending: isUserLoggingOut } = useUserLogout(
     () => {
       router.push("/login");
-    }
+    },
   );
 
   const handleLogout = () => {
@@ -36,50 +36,46 @@ const NavbarPortal = ({ admin = false, openMenu, setOpenMenu }) => {
     <>
       {(isAdminLoggingOut || isUserLoggingOut) && <LoadingBackdrop />}
 
-      <div className="px-[24.5px_16px] py-2 flex justify-between items-center">
+      <div className="dash-topbar">
         {admin ? (
-          <img src="/logo.png" alt="" className="w-20"/>
+          <img src="/logo.png" alt="" className="w-10" />
         ) : (
-          <img src="/logo.png" alt="" className="w-20"/>
+          <img src="/logo.png" alt="" className="w-10" />
         )}
 
-        {!admin ? (
-          <div className="flex gap-3 items-center">
-            {pathname !== "/user" && (
-              <div
-                className="flex items-center justify-center p-3 rounded-full bg-black cursor-pointer size-[48px]"
-                onClick={() => router.back()}
-              >
-                <BackArrow className="text-white size-[26px]" />
-              </div>
-            )}
-            <div
-              className="flex items-center justify-center p-3 rounded-full bg-black cursor-pointer size-[48px]"
-              onClick={handleLogout}
-            >
-              <Logout className="text-white size-[26px]" />
-            </div>
-          </div>
-        ) : (
-          <>
-            <div className="hidden md:flex items-center justify-center p-3 rounded-full bg-black cursor-pointer">
-              <Logout onClick={handleLogout} className="text-white size-[26px]" />
-            </div>
-            <div className="md:hidden p-3 rounded-full bg-black flex items-center justify-center size-[48px] cursor-pointer">
-              {openMenu ? (
-                <X
-                  onClick={() => setOpenMenu(!openMenu)}
-                  className="text-white size-[24px]"
-                />
-              ) : (
-                <BurgerIcon
-                  onClick={() => setOpenMenu(!openMenu)}
-                  className="text-white size-[24px]"
-                />
+        <div className="flex items-center gap-2">
+          {!admin ? (
+            <div className="flex gap-3 items-center">
+              {pathname !== "/user" && (
+                <div className="dash-icon-btn" onClick={() => router.back()}>
+                  <BackArrow className="size-[22px]" />
+                </div>
               )}
+              <div className="dash-icon-btn" onClick={handleLogout}>
+                <Logout className="size-[22px]" />
+              </div>
             </div>
-          </>
-        )}
+          ) : (
+            <>
+              <div className="hidden md:flex dash-icon-btn">
+                <Logout onClick={handleLogout} className="size-[22px]" />
+              </div>
+              <div className="md:hidden dash-icon-btn">
+                {openMenu ? (
+                  <X
+                    onClick={() => setOpenMenu(!openMenu)}
+                    className="size-[22px]"
+                  />
+                ) : (
+                  <BurgerIcon
+                    onClick={() => setOpenMenu(!openMenu)}
+                    className="size-[22px]"
+                  />
+                )}
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </>
   );

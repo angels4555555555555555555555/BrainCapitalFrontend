@@ -1,21 +1,5 @@
-const ArbitrageHeroSection = () => {
-  return (
-    <div
-      className={`flex flex-col gap-8 md:gap-12 justify-center items-center min-h-[96vh] text-white hero-image px-8`}
-    >
-      <h1 className="text-3xl md:text-6xl text-center font-light">Fest-und Tagesgeld</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <a href="#footer">
-          <button className="bg-[#5639A5] w-full text-white rounded-lg p-[5px_20px] h-[42px]">
-            Rufen sie uns an
-          </button>
-        </a>
-        <button className="bg-white rounded-lg p-[5px_20px] text-black h-[42px]">
-          Vereinbaren sie einen Termin
-        </button>
-      </div>
-    </div>
-  );
-};
+import { ArrowDown, ArrowRight } from "lucide-react";
 
-export default ArbitrageHeroSection;
+export default function ArbitrageHeroSection() {
+  return <section className="detail-hero detail-hero--deposit"><div className="site-container detail-hero__content"><p className="eyebrow">Fest- & Tagesgeld</p><h1>Sicherheit und Liquidität sinnvoll verbinden.</h1><p>Planbare Zinsen, transparente Bedingungen und eine Struktur, die zu Ihrem zeitlichen Horizont passt.</p><div className="hero-actions"><a className="button button--primary" href="/#kontakt">Möglichkeiten prüfen <ArrowRight size={17}/></a><a className="button button--light" href="#details">Lösungen vergleichen <ArrowDown size={17}/></a></div></div></section>;
+}

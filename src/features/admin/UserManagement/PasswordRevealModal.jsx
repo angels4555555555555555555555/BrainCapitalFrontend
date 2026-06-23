@@ -2,10 +2,11 @@
 
 import React from "react";
 import { Modal, Button, PasswordInput } from "@mantine/core";
+import { Eye, EyeOff } from "lucide-react";
 
 const PasswordRevealModal = ({ opened, onClose, password = "" }) => {
   return (
-    <Modal opened={opened} onClose={onClose} title="Passwort" centered>
+    <Modal opened={opened} onClose={onClose} title="Passwort" radius={12} centered>
       <div className="p-4 flex flex-col items-center gap-6">
         <PasswordInput
           label="Passwort"
@@ -14,16 +15,20 @@ const PasswordRevealModal = ({ opened, onClose, password = "" }) => {
           readOnly
           className="w-full"
           classNames={{
-            input: "h-[50px]",
+            label: "text-[var(--navy)] font-semibold mb-1.5",
+            input:
+              "h-[48px] border border-[var(--line)] rounded-[8px] focus:border-[var(--gold)]",
           }}
-          visibilityToggleIcon={({ reveal }) => (reveal ? "🙈" : "👁️")}
+          visibilityToggleIcon={({ reveal }) =>
+            reveal ? <EyeOff size={18} /> : <Eye size={18} />
+          }
         />
 
         <Button
           unstyled
           type="button"
           onClick={onClose}
-          className="h-[50px] w-full sm:w-[278px] bg-transparent text-[#111827] border border-[#E7E7E7] rounded-md hover:bg-[#F3F4F6] transition"
+          className="button button--secondary w-full sm:w-[278px]"
         >
           Schließen
         </Button>

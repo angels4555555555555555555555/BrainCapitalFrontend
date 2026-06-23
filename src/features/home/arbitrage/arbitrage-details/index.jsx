@@ -1,33 +1,11 @@
-const ArbitrageDetails = () => {
-  return (
-    <div className="px-8 py-20 flex justify-center">
-      <div className="max-w-[1040px] text-black/80 font-light flex flex-col gap-8 md:gap-12">
-        <div className="text-center w-full">
-          <h2 className="text-2xl md:text-4xl text-center font-light leading-normal">
-            Fest-und Tagesgeld – Sicherheit und Planbarkeit
-          </h2>
-        </div>
-        <div className="text-center w-full">
-          <p className="text-lg md:text-xl">
-            Fest-und Tagesgeldanlagen bilden die Grundlage einer stabilen und
-            sicherheitsorientierten Vermögensstruktur. Sie bieten planbare
-            Zinserträge, hohe Transparenz sowie ein geringes Risiko und eignen
-            sich insbesondere zur Liquiditätssteuerung und zum Kapitalerhalt.
-            <br />
-            Tagesgeld ermöglicht eine jederzeitige Verfügbarkeit des angelegten
-            Kapitals bei variabler Verzinsung und eignet sich ideal für
-            kurzfristige Rücklagen oder flexible Vermögensbestandteile. Festgeld
-            hingegen bietet feste Laufzeiten und garantierte Zinssätze, was eine
-            verlässliche Ertragsplanung ermöglicht.
-            <br />
-            Darüber hinaus prüfen wir im Rahmen unserer Mandatsarbeit auch die Möglichkeit, bestehende Festgeldanlagen von Mandanten zu vermitteln, die ihre Verträge vorzeitig beenden möchten. In geeigneten Fällen kann so der Einstieg in laufende Festgeldverträge ermöglicht werden, wodurch potenzielle Nachteile für bestehende Mandanten reduziert und zugleich attraktive Konditionen für neue Anleger geprüft werden können.
-            <br />
-            Wir begleiten unsere Mandanten bei der Auswahl und Strukturierung passender Fest-und Tagesgeldlösungen und legen dabei Wert auf transparente Bedingungen, solide Bankpartner und die gesetzliche Einlagensicherung. Ziel ist es, Sicherheit, Stabilität und Liquidität sinnvoll in eine ganzheitliche Vermögensstrategie zu integrieren.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
+import { CalendarClock, RefreshCcw, ShieldCheck } from "lucide-react";
 
-export default ArbitrageDetails;
+const options = [
+  [RefreshCcw, "Tagesgeld", "Flexible Verfügbarkeit bei variabler Verzinsung – geeignet für Rücklagen und kurzfristig benötigtes Kapital."],
+  [CalendarClock, "Festgeld", "Feste Laufzeiten und vereinbarte Zinssätze schaffen eine verlässliche Grundlage für die Ertragsplanung."],
+  [ShieldCheck, "Sicherheitsrahmen", "Wir achten auf transparente Konditionen, solide Bankpartner und die jeweils geltende gesetzliche Einlagensicherung."],
+];
+
+export default function ArbitrageDetails() {
+  return <section className="detail-section" id="details"><div className="site-container detail-intro"><div><p className="eyebrow">Stabile Basis</p><h2>Planbar anlegen, flexibel bleiben</h2></div><p>Fest- und Tagesgeld können den sicherheitsorientierten Teil einer Vermögensstruktur bilden. Gemeinsam prüfen wir, wie Laufzeit, Verfügbarkeit und Verzinsung zu Ihren Zielen passen.</p></div><div className="site-container detail-card-grid">{options.map(([Icon,title,text],i)=><article key={title}><span>0{i+1}</span><Icon size={24}/><h3>{title}</h3><p>{text}</p></article>)}</div><div className="site-container detail-note"><strong>Bestehende Verträge im Blick.</strong><p>Wenn ein Festgeldvertrag vorzeitig beendet werden soll, prüfen wir geeignete Übertragungs- oder Vermittlungsmöglichkeiten. Ziel ist eine nachvollziehbare Lösung, die potenzielle Nachteile reduziert.</p></div></section>;
+}

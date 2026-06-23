@@ -1,19 +1,6 @@
 import Link from "next/link";
-import "./styles.css";
+import { ArrowRight } from "lucide-react";
 
-const CallToActionSection = () => {
-  return (
-    <div className="flex flex-col items-center justify-center gap-8 md:gap-12 px-8 min-h-[721px] bg-image">
-      <h1 className="text-3xl md:text-6xl text-center text-white max-w-[500px] font-light">
-        Haben wir ihr Interesse geweckt?
-      </h1>
-      <Link href="/#Karriere">
-        <button className="bg-[#5639A5] rounded-lg p-[5px_20px] text-white font-semibold w-[220px] h-[42px]">
-          Kontaktieren Sie uns
-        </button>
-      </Link>
-    </div>
-  );
-};
-
-export default CallToActionSection;
+export default function CallToActionSection() {
+  return <section className="detail-cta"><div className="site-container"><div><p className="eyebrow">Nächster Schritt</p><h2>Bringen wir Struktur in Ihre finanziellen Ziele.</h2></div><Link className="button button--primary" href="/#kontakt">Gespräch anfragen <ArrowRight size={17} /></Link></div></section>;
+}

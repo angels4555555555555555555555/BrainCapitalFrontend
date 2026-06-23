@@ -3,12 +3,14 @@ import axiosInstance from "@/utils/axiosInstance";
 export const userManagementAPIs = {
     getUsersList: async ({ page = 1, pageSize = 10, searchTerm }) => {
         try {
-
-            const response = await axiosInstance.get("/admin/searchUsers", {
+            const endpoint = searchTerm?.trim()
+                ? "/admin/searchUsers"
+                : "/admin/getUsers";
+            const response = await axiosInstance.get(endpoint, {
                 params: {
                     page,
                     pageSize,
-                    searchTerm,
+                    ...(searchTerm?.trim() && { searchTerm: searchTerm.trim() }),
                 },
             });
             return response.data;
@@ -29,7 +31,7 @@ export const userManagementAPIs = {
     },
     deleteUser: async (userIds) => {
         try {
-            const response = await axiosInstance.patch("/admin/deleteUser/",
+            const response = await axiosInstance.patch("/admin/deleteUser",
                 {
                     userIds
                 }

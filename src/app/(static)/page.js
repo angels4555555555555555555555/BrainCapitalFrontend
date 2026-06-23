@@ -1,171 +1,323 @@
 import Link from "next/link";
-import Awards from "@/features/home/awards";
-import Contact from "@/features/home/contact";
-import FeatureCards from "@/features/home/feature-cards";
-import Footer from "@/features/home/footer";
+import Image from "next/image";
+import {
+  ArrowRight,
+  BadgeCheck,
+  BarChart3,
+  Building2,
+  Check,
+  Landmark,
+  LineChart,
+  Mail,
+  MapPin,
+  Phone,
+  Quote,
+  ShieldCheck,
+  Sparkles,
+  Target,
+  TrendingUp,
+  Users,
+  WalletCards,
+} from "lucide-react";
 import Header from "@/features/home/header";
-import Hero from "@/features/home/hero";
-import SplitSection from "@/features/home/split-section";
-import Strengths from "@/features/home/strengths";
-import Team from "@/features/home/team";
-import Testimonials from "@/features/home/testimonials";
+import Footer from "@/features/home/footer";
+import FaqAccordion from "@/features/home/faq-accordion";
+
+const services = [
+  {
+    icon: LineChart,
+    number: "01",
+    title: "Kapitalmarkt & IPO",
+    text: "Wir strukturieren den Weg zum Kapitalmarkt und begleiten Unternehmen sowie Investoren mit klaren, nachvollziehbaren Entscheidungen.",
+    href: "/ipo",
+  },
+  {
+    icon: ShieldCheck,
+    number: "02",
+    title: "Fest- & Tagesgeld",
+    text: "Sicherheitsorientierte Lösungen für planbare Erträge, verfügbare Liquidität und den langfristigen Erhalt von Kapital.",
+    href: "/arbitrage",
+  },
+  {
+    icon: WalletCards,
+    number: "03",
+    title: "Vermögensstrategie",
+    text: "Individuelle Konzepte verbinden Ihre finanziellen Ziele mit einer ausgewogenen Struktur aus Stabilität und Wachstum.",
+    href: "/verm-gensverwaltung",
+  },
+];
+
+const strengths = [
+  [Target, "Individuell ausgerichtet", "Jede Strategie beginnt mit Ihren Zielen, Ihrem Zeithorizont und Ihrer persönlichen Risikobereitschaft."],
+  [BarChart3, "Analytisch fundiert", "Marktdaten, Chancen und Risiken werden strukturiert bewertet und verständlich eingeordnet."],
+  [BadgeCheck, "Transparent begleitet", "Sie erhalten klare Empfehlungen, nachvollziehbare Prozesse und einen festen Ansprechpartner."],
+];
+
+const faqs = [
+  ["Wie läuft das Erstgespräch ab?", "In einem unverbindlichen Erstgespräch klären wir, wo Sie stehen und welche Struktur zu Ihren Zielen passt. Im Anschluss erhalten Sie eine klare Einordnung der nächsten Schritte."],
+  ["Welche Leistungen bietet Brain Capital Asset an?", "Wir begleiten Sie in drei Kernbereichen: Kapitalmarkt & IPO, Fest- & Tagesgeld sowie individuelle Vermögensstrategien – jeweils abgestimmt auf Stabilität, Liquidität und Wachstum."],
+  ["Wo ist Brain Capital Asset ansässig?", "Wir sind mit Standorten in Erlangen und Berlin persönlich für Sie erreichbar und betreuen Mandate bundesweit."],
+  ["Wie kann ich Kontakt aufnehmen?", "Sie erreichen uns telefonisch unter 030 519 994 482 oder per E-Mail an info@brain-capital-asset.com – alternativ nutzen Sie das Kontaktformular auf dieser Seite."],
+];
+
+const team = [
+  {
+    name: "Christian Herzog",
+    role: "Finanzberater",
+    image: "/image (3).jfif",
+    text: "Entwickelt kapitalmarktorientierte Strategien mit einem klaren Fokus auf langfristige Wertschöpfung.",
+  },
+  {
+    name: "Volker Hartmund",
+    role: "Investmentexperte",
+    image: "/image (6).png",
+    text: "Verbindet präzise Marktanalyse mit strategischem Weitblick bei der Strukturierung von Investments.",
+  },
+  {
+    name: "Christiane Schneider",
+    role: "Assistenz der Geschäftsführung",
+    image: "/image.jpg",
+    text: "Koordiniert zentrale Abläufe und sorgt für verlässliche, effiziente Kommunikation im Mandat.",
+  },
+];
+
+function SectionHeading({ eyebrow, title, text, light = false }) {
+  return (
+    <div className={`section-heading ${light ? "section-heading--light" : ""}`}>
+      <p className="eyebrow">{eyebrow}</p>
+      <h2>{title}</h2>
+      {text && <p className="section-intro">{text}</p>}
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main>
       <Header />
-      <Hero imageUrl="/d7e50718-c133-4bbb-96c4-91a523984dfd.png" />
-      <section
-        className="py-16 md:py-24 scroll-smooth scroll-mt-20 md:scroll-mt-35"
-        id="Services"
-      >
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mx-auto mb-10 md:mb-14">
-            <p className="uppercase font-bold text-base text-muted-foreground">
-              Services
-            </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl mx-auto text-balance">
-              Individuelle Finanzlösungen für Sie
-            </h2>
-          </div>
-          <FeatureCards />
-          <div className="text-center mt-18">
-            <Link href="/#Karriere" className="px-6 py-4 text-white rounded-lg bg-[#5639A5] font-bold">
-              Konsultation buchen
-            </Link>
-          </div>
-        </div>
-      </section>
 
-      <SplitSection
-        kicker="UNSERE GESCHICHTE"
-        title="Vertrauen Sie uns mit Ihrer Finanzplanung"
-        copy={
-          <>
+      <section className="hero-shell">
+        <div className="site-container hero-breadcrumb"><span>Startseite</span><span>/</span><strong>Finanzberatung</strong></div>
+        <div className="site-container hero-grid">
+          <div className="hero-copy">
+            <div className="status-pill">Brain Capital Asset</div>
+            <h1>Finanzstrategien <strong>voller Möglichkeiten</strong></h1>
             <p>
-              Mit der Gründung am 04.10.2021 in Erlangen haben wir uns als spezialisierter Finanzberater mit klarem Fokus auf Kapitalmarktstrategien und Börsengänge (IPOs) positioniert. Unser Hauptsitz in Erlangen, Deutschland, bildet das strategische Zentrum unserer Unternehmensberatung und Strukturierung von Kapitalmarktprojekten.
+              Wir verbinden stabile Anlageformen mit strategischem Zugang zum
+              Kapitalmarkt – persönlich, transparent und auf Ihre Ziele ausgerichtet.
+            </p>
+            <div className="hero-actions">
+              <a className="button button--primary" href="#kontakt">
+                Jetzt Beratung anfragen <ArrowRight size={17} />
+              </a>
+            </div>
+            <div className="hero-trust">
+              <div><strong>2 Standorte</strong><span>Erlangen & Berlin</span></div>
+              <div><strong>3 Kompetenzfelder</strong><span>Ein abgestimmtes System</span></div>
+              <div><strong>Persönlich</strong><span>Feste Ansprechpartner</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="callout-section">
+        <div className="site-container">
+          <div className="callout-box">
+            <h3>Unverbindliches Erstgespräch vereinbaren</h3>
+            <p>In einem unverbindlichen Erstgespräch klären wir, wo Sie stehen und welche Struktur zu Ihren Zielen passt – ganz ohne Verpflichtung.</p>
+            <a className="text-link" href="#kontakt">Termin anfragen <ArrowRight size={16} /></a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="leistungen">
+        <div className="site-container">
+          <div className="heading-row">
+            <SectionHeading
+              eyebrow="Unsere Leistungen"
+              title="Ein System für Ihre finanziellen Ziele"
+              text="Drei Kompetenzfelder, präzise aufeinander abgestimmt und in einer klaren Strategie gebündelt."
+            />
+            <a href="#kontakt" className="text-link">Beratung anfragen <ArrowRight size={16} /></a>
+          </div>
+          <div className="service-grid">
+            {services.map(({ icon: Icon, number, title, text, href }) => (
+              <Link className="service-card" href={href} key={title}>
+                <div className="card-top"><span className="icon-box"><Icon size={22} /></span><span>{number}</span></div>
+                <h3>{title}</h3>
+                <p>{text}</p>
+                <span className="card-link">Mehr erfahren <ArrowRight size={16} /></span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--tinted" id="unternehmen">
+        <div className="site-container story-grid">
+          <div className="story-visual">
+            <Image src="/image (7).png" alt="Strategiegespräch zu Anlageformen und Kapitalmarkt" width={800} height={1000} sizes="(max-width: 860px) 100vw, 42vw" />
+            <div className="visual-note">
+              <Sparkles size={19} />
+              <div><span>Seit 2021</span><strong>Strategisch an Ihrer Seite</strong></div>
+            </div>
+          </div>
+          <div className="story-copy">
+            <SectionHeading eyebrow="Brain Capital Asset" title="Finanzberatung mit unternehmerischer Perspektive" />
+            <p>
+              Von Erlangen und Berlin aus begleiten wir Unternehmen und
+              Investoren in entscheidenden Finanzphasen. Unser Schwerpunkt liegt
+              auf Kapitalmarkt- und IPO-Strategien sowie strukturierten Fest- und
+              Tagesgeldlösungen.
             </p>
             <p>
-              Als Teil einer größeren Holding, die an zahlreichen Unternehmen beteiligt ist und aktiv Start-ups sowie Wachstumsunternehmen fördert, liegt unser wirtschaftlicher Schwerpunkt dort, wo nachhaltige Wertschöpfung entsteht: am Kapitalmarkt. Insbesondere die strukturierte Vorbereitung und Begleitung von Unternehmen bis zum Börsengang stellt den zentralen Hebel für Wachstum und Ertragssteigerung dar.
+              Als Teil einer unternehmerisch geprägten Holding denken wir über
+              einzelne Produkte hinaus. Wir ordnen Chancen ein, machen Risiken
+              sichtbar und entwickeln Lösungen, die Stabilität, Liquidität und
+              Wachstum sinnvoll verbinden.
             </p>
-            <p>
-              Unsere Zweigniederlassung am Potsdamer Platz im Sony Center, Berlin, ist gezielt auf das IPO-Geschäft sowie auf strukturierte Fest- und Tagesgeldlösungen ausgerichtet. Dort bündeln wir unsere operative Expertise in der Kapitalmarktvorbereitung, der Investorenstrukturierung sowie in der Umsetzung sicherheitsorientierter Anlage- und Liquiditätskonzepte für Unternehmen und Investoren.
-            </p>
-            <p>
-              Unser Anspruch ist es, Unternehmen und Investoren in entscheidenden Marktphasen professionell zu begleiten und substanziellen Mehrwert durch Kapitalmarktzugang und stabile Ertragsmodelle zu schaffen.
-            </p>
-          </>
-        }
-        image="/image (7).png"
-        imageAlt="Beratungsszene in einem Meetingraum"
-      />
-
-      <section
-        id="WARUM"
-        className="py-16 md:py-24 scroll-smooth scroll-mt-20 md:scroll-mt-40"
-      >
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mx-auto mb-10 md:mb-14">
-            <p className="uppercase font-bold text-base text-muted-foreground">
-              WARUM MIT UNS ARBEITEN
-            </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl mx-auto text-balance">
-              Unsere Stärken für Sie
-            </h2>
-          </div>
-          <Strengths />
-          <div className="text-center mt-18">
-            <a className="px-6 py-4 text-white rounded-lg bg-[#5639A5] font-bold">
-              Konsultation buchen
-            </a>
+            <div className="check-list">
+              <span><Check size={17} /> Klare Entscheidungsgrundlagen</span>
+              <span><Check size={17} /> Persönliche Begleitung</span>
+              <span><Check size={17} /> Langfristiger Strategiehorizont</span>
+            </div>
+            <a className="button button--secondary" href="#kontakt">Unternehmen kennenlernen</a>
           </div>
         </div>
       </section>
 
-      <SplitSection
-        kicker="EINZIGARTIGER ANSATZ"
-        copy={
-          <>
-            <p>
-              Unser Ansatz verbindet sicherheitsorientierte Fest- und Tagesgeldlösungen mit gezielten Kapitalmarkt- und IPO-Strategien. So schaffen wir eine ausgewogene Struktur aus Stabilität, Liquidität und Wachstumsperspektiven, abgestimmt auf die individuellen Ziele unserer Mandanten.  Als erfahrene Finanzberater entwickeln wir maßgeschneiderte Finanzstrategien, die sowohl dem Kapitalerhalt als auch der kontrollierten Nutzung von Marktchancen dienen. Durch kontinuierliche Marktbeobachtung und die laufende Anpassung unserer Konzepte stellen wir sicher, dass sowohl sichere Anlageformen als auch vorbörsliche Investitionsmöglichkeiten professionell strukturiert und transparent begleitet werden.  Unser Ziel ist es, langfristige Werte zu schaffen, Risiken klar darzustellen und Mandanten auf Basis von Vertrauen, Transparenz und Kapitalmarktexpertise bei der Erreichung ihrer finanziellen Ziele zu begleiten.
-            </p>
-          </>
-        }
-        image="/b666bd421d.jpg"
-        imageAlt="Beratungsszene in einem Meetingraum"
-      />
-
-      <section className="py-16 md:py-24">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mx-auto mb-10 md:mb-14">
-            <p className="uppercase font-bold text-base text-muted-foreground">
-              UNSER TEAM
-            </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl mx-auto text-balance">
-              Unser Expertenteam für Finanzberatung
-            </h2>
+      <section className="section" id="warum-rch">
+        <div className="site-container">
+          <SectionHeading
+            eyebrow="Warum RCH"
+            title="Komplexität wird zu einer klaren nächsten Entscheidung"
+            text="Unser Beratungsansatz ist strukturiert, verständlich und konsequent an Ihrem Mandat ausgerichtet."
+          />
+          <div className="strength-grid">
+            {strengths.map(([Icon, title, text], index) => (
+              <article className="strength-item" key={title}>
+                <span className="strength-number">0{index + 1}</span>
+                <Icon size={25} />
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
           </div>
-          <Team />
         </div>
       </section>
 
-      <section className="bg-gray-100 py-16 md:py-24">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mx-auto mb-10 md:mb-12 max-w-xl">
-            <p className="uppercase font-bold text-base text-muted-foreground">
-              ANERKANNTE SPITZENLEISTUNGEN
-            </p>
-            <p className="text-muted-foreground mt-8 text-center leading-relaxed font-light text-lg">
-             Unser Team verfügt über anerkannte Auszeichnungen sowie relevante Akkreditierungen der Finanzbranche, die unsere fachliche Qualifikation, strukturierten Prozesse und professionelle Arbeitsweise dokumentieren. Diese Qualifikationen bilden eine belastbare Grundlage für fundierte Investitionsentscheidungen und eine verantwortungsvolle Begleitung von Kapital.  Durch kontinuierliche fachliche Weiterbildung, die Einhaltung hoher Qualitäts- und Compliance-Standards sowie die fortlaufende Anpassung an regulatorische und marktwirtschaftliche Anforderungen gewährleisten wir eine verlässliche, transparente und investorenorientierte Beratung.
-            </p>
+      <section className="section section--navy" id="team">
+        <div className="site-container">
+          <div className="heading-row">
+            <SectionHeading
+              light
+              eyebrow="Unser Team"
+              title="Erfahrung, die persönlich erreichbar bleibt"
+              text="Ein kompaktes Team mit klaren Verantwortlichkeiten und kurzen Entscheidungswegen."
+            />
+            <div className="team-count"><Users size={18} /><span>3 Ansprechpartner</span></div>
           </div>
-          <Awards />
+          <div className="team-grid">
+            {team.map((person) => (
+              <article className="team-card" key={person.name}>
+                <Image src={person.image} alt={`${person.name}, ${person.role}`} width={640} height={720} sizes="(max-width: 620px) 100vw, (max-width: 860px) 50vw, 33vw" />
+                <div className="team-card__body">
+                  <span>{person.role}</span>
+                  <h3>{person.name}</h3>
+                  <p>{person.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mx-auto mb-10 md:mb-14">
-            <p className="uppercase font-bold text-base text-muted-foreground">
-              TESTIMONIALS
-            </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl mx-auto text-balance">
-              Kundenbewertungen unserer Finanzberater
-            </h2>
+      <section className="section quality-section">
+        <div className="site-container quality-grid">
+          <SectionHeading
+            eyebrow="Qualitätsverständnis"
+            title="Sorgfalt ist kein Zusatz. Sie ist die Grundlage."
+            text="Fachliche Weiterbildung, belastbare Prozesse und hohe Compliance-Standards prägen jede Zusammenarbeit."
+          />
+          <div className="quality-list">
+            <div><BadgeCheck size={22} /><span><strong>Geprüfte Kompetenz</strong>Fundierte Einordnung statt pauschaler Empfehlungen.</span></div>
+            <div><ShieldCheck size={22} /><span><strong>Verantwortungsvolle Prozesse</strong>Transparenz und Sorgfalt in jeder Mandatsphase.</span></div>
+            <div><TrendingUp size={22} /><span><strong>Aktuelles Marktwissen</strong>Strategien werden kontinuierlich neu bewertet.</span></div>
           </div>
-          <Testimonials />
         </div>
       </section>
 
-      <section
-        className="bg-gray-100 py-16 md:py-24 scroll-smooth scroll-mt-20 md:scroll-mt-28"
-        id="Karriere"
-      >
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mx-auto mb-10 md:mb-14">
-            <p className="uppercase font-bold text-base text-muted-foreground">
-              KONTAKTIEREN SIE UNS
-            </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl mx-auto text-balance">
-              Kontaktieren Sie uns für Finanzberatung
-            </h2>
+      <section className="section section--tinted testimonials-section">
+        <div className="site-container">
+          <SectionHeading eyebrow="Mandantenstimmen" title="Zusammenarbeit, die Vertrauen schafft" />
+          <div className="testimonial-grid">
+            <article>
+              <Quote size={26} />
+              <p>„Die Beratung war transparent, klar strukturiert und mit einem überzeugenden Blick auf langfristige Finanzlösungen verbunden.“</p>
+              <footer><strong>Michael Becker</strong><span>Becker Invest Solutions GmbH</span></footer>
+            </article>
+            <article>
+              <Quote size={26} />
+              <p>„Fundierte Marktkenntnis und eine nachvollziehbare Vorgehensweise haben uns in jeder Phase Sicherheit gegeben.“</p>
+              <footer><strong>Thomas Keller</strong><span>Keller Advisory Services</span></footer>
+            </article>
           </div>
-          <Contact />
         </div>
       </section>
 
-      <iframe
-        width="100%"
-        height="570"
-        frameBorder="0"
-        allowFullScreen={true}
-        data-categories="unclassified"
-        data-termly-iframe-id="termly-iframe-0"
-        style={{ display: "block" }}
-        data-autoblock-ignore="1"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.286268866715!2d13.3723736!3d52.5101582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851c9c01cf5df%3A0x455516431cbe2511!2sPotsdamer%20Str.%202%2C%2010785%20Berlin%2C%20Germany!5e0!3m2!1sen!2s!4v1768313332804!5m2!1sen!2s"
-        title="Google Maps Location"
-      ></iframe>
+      <section className="section faq-section">
+        <div className="site-container">
+          <SectionHeading eyebrow="Häufige Fragen" title="Antworten auf Ihre wichtigsten Fragen" />
+          <FaqAccordion items={faqs} />
+          <p className="faq-footnote">Weitere Fragen? <a href="#kontakt">Sprechen Sie uns direkt an</a></p>
+        </div>
+      </section>
+
+      <section className="section contact-section" id="kontakt">
+        <div className="site-container contact-grid">
+          <div className="contact-copy">
+            <SectionHeading light eyebrow="Kontakt" title="Lassen Sie uns über Ihre nächsten Schritte sprechen" />
+            <p>In einem unverbindlichen Erstgespräch klären wir, wo Sie stehen und welche Struktur zu Ihren Zielen passt.</p>
+            <div className="contact-links">
+              <a href="tel:+4930519994482"><span><Phone size={19} /></span><div><small>Telefon</small><strong>030 519 994 482</strong></div></a>
+              <a href="mailto:info@brain-capital-asset.com"><span><Mail size={19} /></span><div><small>E-Mail</small><strong>info@brain-capital-asset.com</strong></div></a>
+              <div><span><MapPin size={19} /></span><div><small>Standorte</small><strong>Erlangen & Berlin</strong></div></div>
+            </div>
+          </div>
+          <form className="contact-form">
+            <div className="form-heading"><span>Erstgespräch</span><strong>Nachricht senden</strong></div>
+            <div className="form-grid">
+              <label>Vor- und Nachname<input name="name" type="text" placeholder="Ihr Name" /></label>
+              <label>E-Mail-Adresse<input name="email" type="email" placeholder="name@unternehmen.de" /></label>
+              <label className="full">Worum geht es?<select name="topic" defaultValue=""><option value="" disabled>Bitte auswählen</option><option>Vermögensstrategie</option><option>Kapitalmarkt & IPO</option><option>Fest- & Tagesgeld</option><option>Sonstiges</option></select></label>
+              <label className="full">Ihre Nachricht<textarea name="message" rows="4" placeholder="Erzählen Sie uns kurz von Ihrem Anliegen." /></label>
+            </div>
+            <label className="consent"><input type="checkbox" /> <span>Ich stimme der Verarbeitung meiner Angaben zur Kontaktaufnahme zu.</span></label>
+            <button className="button button--primary form-submit" type="button">Anfrage absenden <ArrowRight size={17} /></button>
+          </form>
+        </div>
+      </section>
+
+      <section className="cta-bar">
+        <div className="site-container cta-bar-grid">
+          <div className="cta-bar-info">
+            <div><small>Telefon Support</small><strong>030 519 994 482</strong></div>
+            <div><small>E-Mail-Service</small><strong>info@brain-capital-asset.com</strong></div>
+          </div>
+          <div className="cta-bar-actions">
+            <a className="button button--primary" href="#kontakt">Erstgespräch vereinbaren</a>
+            <Link className="button button--dark" href="/login">Kundenlogin</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="office-strip">
+        <div className="site-container office-grid">
+          <div><Building2 size={20} /><span><small>Hauptsitz</small><strong>Sankt Michael 29 · 91056 Erlangen</strong></span></div>
+          <div><Landmark size={20} /><span><small>Zweigniederlassung</small><strong>Potsdamer Str. 2 · 10785 Berlin</strong></span></div>
+          <a href="https://maps.google.com/?q=Potsdamer+Str.+2,+10785+Berlin" target="_blank" rel="noreferrer">Auf Karte öffnen <ArrowRight size={16} /></a>
+        </div>
+      </section>
 
       <Footer />
     </main>

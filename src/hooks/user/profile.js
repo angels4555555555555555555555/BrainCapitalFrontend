@@ -24,3 +24,11 @@ export const useUpdateUserProfilePicture = (onSuccessCallback) =>
         errorMsg: "Profilbild konnte nicht aktualisiert werden",
         onSuccess: onSuccessCallback,
     });
+
+export const useUpdateUserPassword = (onSuccessCallback) =>
+    useMutationWithToast({
+        mutationFn: userProfileAPIs.updatePassword,
+        successMsg: "Passwort erfolgreich geändert!",
+        errorMsg: "Passwort konnte nicht geändert werden",
+        onSuccess: onSuccessCallback,
+    });

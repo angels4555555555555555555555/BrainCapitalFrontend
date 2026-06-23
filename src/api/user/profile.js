@@ -5,22 +5,24 @@ export const userProfileAPIs = {
   getProfile: async () => {
     try {
       const response = await axiosInstance.get("/user/getProfile");
-
-      const updatedResponse = {
-        ...response.data,
-        user: {
-          ...response.data.user,
-          totalShareValue:
-            response?.data?.user?.shares * response?.data?.user?.klarnaPrice,
-        },
-      };
-
-      return updatedResponse;
+      return response.data;
     } catch (error) {
       console.error("Get profile error:", error);
       throw new Error(
         error?.response?.data?.message ||
           "Failed to fetch user profile. Please try again."
+      );
+    }
+  },
+
+  updatePassword: async (data) => {
+    try {
+      const response = await axiosInstance.put("/user/updatePassword", data);
+      return response.data;
+    } catch (error) {
+      throw new Error(
+        error?.response?.data?.message ||
+          "Failed to update password. Please try again."
       );
     }
   },

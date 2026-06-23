@@ -23,7 +23,7 @@ export default function StaticLayout({ children }) {
       <NavbarPortal admin openMenu={openMenu} setOpenMenu={setOpenMenu} />
       <div className="flex">
         <Sidebar openMenu={openMenu} setOpenMenu={setOpenMenu} />
-        <div className="lg:p-[36px] p-4 md:p-6 bg-[#F4F4F7] h-[calc(100dvh-104px)] w-full relative">
+        <div className="lg:p-[36px] p-4 md:p-6 bg-[var(--surface-blue)] h-[calc(100dvh-104px)] w-full relative">
           {openMenu && (
             <div className="absolute z-2 top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.7)]"></div>
           )}

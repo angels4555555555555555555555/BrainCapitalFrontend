@@ -1,49 +1,12 @@
-const IPODetails = () => {
-  return (
-    <div className="px-8 py-20 flex justify-center">
-      <div className="max-w-[1040px] text-xl md:text-2xl text-black/80 font-light leading-normal md:leading-10">
-        Ein Börsengang, auch Initial Public Offering (IPO) genannt, ist der
-        Prozess, bei dem ein privates Unternehmen erstmals seine Aktien der
-        Öffentlichkeit anbietet. Dieser Schritt markiert häufig einen
-        bedeutenden Meilenstein in der Entwicklung einer Firma und bietet
-        vielfältige Vorteile.
-        <br />
-        Einer der Hauptvorteile eines IPOs ist der Zugang zu Kapital. Durch den
-        Verkauf von Aktien an die breite Öffentlichkeit kann ein Unternehmen
-        erhebliche Finanzmittel beschaffen, die für weiteres Wachstum und
-        Expansion, die Entwicklung neuer Produkte oder die Tilgung von Schulden
-        verwendet werden können. Dieses Kapital ist besonders wertvoll, da es
-        nicht wie Fremdkapital zurückgezahlt werden muss.
-        <br />
-        Ein weiterer Vorteil ist die gesteigerte öffentliche Wahrnehmung und das
-        Prestige, das mit der Notierung an einer Börse einhergeht. Ein
-        börsennotiertes Unternehmen gewinnt oft an Glaubwürdigkeit und Vertrauen
-        bei Kunden, Lieferanten und potenziellen Geschäftspartnern. Dies kann
-        auch dazu führen, dass es einfacher ist, hochqualifizierte Mitarbeiter
-        zu gewinnen und bestehendes Personal zu halten, da Aktienoptionen und
-        andere aktienbasierte Vergütungen als Anziehungspunkt dienen können.
-        IPOs bieten auch liquiditätsbezogene Vorteile für frühe Investoren und
-        Gründer. Diese können einen Teil ihrer Anteile veräußern und somit ihre
-        Investitionen realisieren. Darüber hinaus schafft ein Börsengang einen
-        öffentlich handelbaren Markt für die Aktien, was es den Aktionären
-        erleichtert, ihre Anteile zu fairen Marktpreisen zu verkaufen.
-        <br />
-        Aktionären erleichtert, ihre Anteile zu fairen Marktpreisen zu
-        verkaufen. Zudem eröffnet ein IPO Möglichkeiten für künftige
-        Kapitalbeschaffungen. Einmal an der Börse, kann ein Unternehmen in der
-        Regel einfacher zusätzliches Kapital aufnehmen, da es bereits eine
-        etablierte Investorenbasis hat und die Liquidität der Aktien am Markt
-        gegeben ist.
-        <br />
-        Allerdings ist zu beachten, dass ein Börsengang auch Herausforderungen
-        und Verpflichtungen mit sich bringt, wie beispielsweise erhöhte
-        Transparenzanforderungen und regulatorische Auflagen. Trotz dieser
-        Herausforderungen kann ein erfolgreicher IPO ein strategischer Schritt
-        sein, der das Wachstum und die langfristige Entwicklung eines
-        Unternehmens fördert.
-      </div>
-    </div>
-  );
-};
+import { BadgeCheck, Building2, ChartNoAxesCombined, Scale } from "lucide-react";
 
-export default IPODetails;
+const benefits = [
+  [ChartNoAxesCombined, "Wachstum finanzieren", "Ein IPO kann neues Eigenkapital für Expansion, Produktentwicklung oder die Stärkung der Bilanz erschließen."],
+  [Building2, "Marktposition stärken", "Die Börsennotierung kann Sichtbarkeit und Glaubwürdigkeit gegenüber Kunden, Partnern und Talenten erhöhen."],
+  [BadgeCheck, "Liquidität ermöglichen", "Gründer und frühe Investoren erhalten perspektivisch einen handelbaren Markt für ihre Beteiligungen."],
+  [Scale, "Pflichten beherrschen", "Transparenz, Governance und Regulierung steigen. Eine saubere Vorbereitung macht diese Anforderungen steuerbar."],
+];
+
+export default function IPODetails() {
+  return <section className="detail-section" id="details"><div className="site-container detail-intro"><div><p className="eyebrow">IPO im Überblick</p><h2>Kapitalzugang mit langfristiger Wirkung</h2></div><p>Der Börsengang ist mehr als eine Finanzierungsrunde. Er verändert Sichtbarkeit, Governance und Handlungsspielräume eines Unternehmens – und verlangt deshalb eine präzise Vorbereitung.</p></div><div className="site-container detail-card-grid detail-card-grid--four">{benefits.map(([Icon,title,text],i)=><article key={title}><span>0{i+1}</span><Icon size={24}/><h3>{title}</h3><p>{text}</p></article>)}</div><div className="site-container detail-note"><strong>Entscheidend ist die Vorbereitung.</strong><p>Wir ordnen Chancen und Anforderungen frühzeitig ein, strukturieren relevante Arbeitspakete und begleiten die Umsetzung mit klarem Blick auf Unternehmen und Investoren.</p></div></section>;
+}

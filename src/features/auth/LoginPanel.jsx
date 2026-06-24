@@ -16,6 +16,7 @@ import { Check, Copy, Mail, Lock } from "lucide-react";
 import { toast } from "sonner";
 import { useUserLogin, useAdminLogin } from "@/hooks/auth";
 import LoadingBackdrop from "@/features/common/LoadingBackdrop";
+import Image from "next/image";
 
 const fieldClassNames = {
   input:
@@ -152,7 +153,7 @@ const LoginPanel = ({ variant }) => {
                 </button>
               </div>
               <div className="p-2 rounded-md bg-[var(--gold)] w-fit  mx-auto">
-                <img src="/logo.png" className="w-40" alt="Brain Capital Asset" />
+                <Image src="/logo.png" width={1219} height={358} className="w-40 h-auto" alt="Brain Capital Asset" priority />
               </div>
               <h2 className="text-center">{isAdmin ? "Admin-Anmeldung" : "Willkommen zurück"}</h2>
               <p className="auth-subtitle text-center">

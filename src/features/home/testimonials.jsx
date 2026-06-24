@@ -28,14 +28,14 @@ function Quote({inst, author, children }) {
 export default function Testimonials() {
   return (
     <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
-      <Quote inst="Becker Invest Solutions GmbH" author="Michael Becker">
-        Die Zusammenarbeit mit der Brain Capital Asset GmbH war von hoher Fachkompetenz und klarer Struktur geprägt. Besonders überzeugt haben uns die transparente Beratung und der strategische Blick auf langfristige Finanzlösungen in Montabaur, Deutschland.
+      <Quote inst="Becker Invest Solutions " author="Michael Becker">
+        Die Zusammenarbeit mit der Brain Capital Asset  war von hoher Fachkompetenz und klarer Struktur geprägt. Besonders überzeugt haben uns die transparente Beratung und der strategische Blick auf langfristige Finanzlösungen in Montabaur, Deutschland.
       </Quote>
       <Quote inst="Keller Advisory Services" author="Thomas Keller">
-        Brain Capital Asset GmbH hat uns mit einer strukturierten Vorgehensweise, fundierter Marktkenntnis und hoher Professionalität überzeugt. Die Beratung war klar, nachvollziehbar und nachhaltig ausgerichtet.
+        Brain Capital Asset  hat uns mit einer strukturierten Vorgehensweise, fundierter Marktkenntnis und hoher Professionalität überzeugt. Die Beratung war klar, nachvollziehbar und nachhaltig ausgerichtet.
       </Quote>
-      <Quote inst="Hoffmann Capital Consulting GmbH" author="Sebastian Hoffmann">
-        Die Zusammenarbeit mit der Brain Capital Asset GmbH war geprägt von strategischem Weitblick, klarer Kommunikation und hoher Verlässlichkeit. Besonders hervorzuheben ist die professionelle Begleitung bei komplexen Finanzthemen.
+      <Quote inst="Hoffmann Capital Consulting " author="Sebastian Hoffmann">
+        Die Zusammenarbeit mit der Brain Capital Asset  war geprägt von strategischem Weitblick, klarer Kommunikation und hoher Verlässlichkeit. Besonders hervorzuheben ist die professionelle Begleitung bei komplexen Finanzthemen.
       </Quote>
     </div>
   );

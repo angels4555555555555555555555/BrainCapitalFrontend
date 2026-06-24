@@ -7,6 +7,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { X } from "lucide-react";
 import { useAdminLogout, useUserLogout } from "@/hooks/auth";
 import LoadingBackdrop from "@/features/common/LoadingBackdrop";
+import Image from "next/image";
 
 const NavbarPortal = ({ admin = false, openMenu, setOpenMenu }) => {
   const router = useRouter();
@@ -38,7 +39,7 @@ const NavbarPortal = ({ admin = false, openMenu, setOpenMenu }) => {
 
       <div className="dash-topbar">
         <div className="p-2 rounded-md bg-[var(--gold)]">
-          <img src="/Logo.png" alt="" className="w-40" />
+          <Image src="/Logo.png" width={1219} height={358} alt="Brain Capital Asset" className="w-40 h-auto" priority />
         </div>
         <div className="flex items-center gap-2">
           {!admin ? (

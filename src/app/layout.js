@@ -22,7 +22,7 @@ const robotoCondensed = Roboto_Condensed({
 });
 
 export const metadata = {
-  title: "Brain Capital Asset GmbH | Finanzstrategien mit Klarheit",
+  title: "Brain Capital Asset  | Finanzstrategien mit Klarheit",
   description: "Brain Capital Asset entwickelt strukturierte Finanzstrategien für Vermögensverwaltung, Kapitalmarkt, IPO sowie Fest- und Tagesgeld.",
   icons: {
     icon: '/favicon.png',

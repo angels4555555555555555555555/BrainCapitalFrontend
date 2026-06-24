@@ -18,7 +18,7 @@ const contactCards = [
   {
     icon: MapPin,
     label: "Hauptsitz",
-    content: <address className="not-italic">Banhalle 11-13<br />56410 Montabaur<br /><br />Deutschland</address>,
+    content: <address className="not-italic">Banhallee 11-13<br />56410 Montabaur<br /><br />Deutschland</address>,
   },
   {
     icon: Building2,
@@ -31,7 +31,7 @@ const contactCards = [
     content: (
       <div className="flex flex-col gap-1">
         <a className="hover:text-[var(--accent)]" href="tel:+4930519994482">089 244 167 734</a>
-        <a className="break-all hover:text-[var(--accent)]" href="mailto:info@brain-capital-asset.com">info@brain-capital-asset.com</a>
+        <a className="break-all hover:text-[var(--accent)]" href="mailto:info@braincapitalasset.com">info@braincapitalasset.com</a>
       </div>
     ),
   },
@@ -116,8 +116,8 @@ const legalSections = [
 ];
 
 export const metadata = {
-  title: "Impressum | Brain Capital Asset GmbH",
-  description: "Anbieterkennzeichnung und rechtliche Informationen der Brain Capital Asset GmbH.",
+  title: "Impressum | Brain Capital Asset ",
+  description: "Anbieterkennzeichnung und rechtliche Informationen der Brain Capital Asset .",
 };
 
 export default function Impressum() {
@@ -131,7 +131,7 @@ export default function Impressum() {
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[var(--gold)]">Rechtliche Informationen</p>
             <h1 className="max-w-3xl text-4xl md:text-6xl font-semibold tracking-[-0.04em]">Impressum</h1>
             <p className="mt-5 max-w-2xl text-base md:text-lg leading-7 text-white/70">
-              Anbieterkennzeichnung und gesetzliche Pflichtangaben der Brain Capital Asset GmbH.
+              Anbieterkennzeichnung und gesetzliche Pflichtangaben der Brain Capital Asset .
             </p>
           </div>
         </section>
@@ -140,7 +140,7 @@ export default function Impressum() {
           <div className="mb-8 flex items-end justify-between gap-6 border-b border-[var(--line)] pb-5">
             <div>
               <p className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-[var(--accent)]">Anbieterkennzeichnung</p>
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-[-0.025em] text-[var(--navy)]">Brain Capital Asset GmbH</h2>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-[-0.025em] text-[var(--navy)]">Brain Capital Asset </h2>
             </div>
           </div>
 

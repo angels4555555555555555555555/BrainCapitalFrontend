@@ -57,7 +57,7 @@ const faqs = [
   ["Wie läuft das Erstgespräch ab?", "In einem unverbindlichen Erstgespräch klären wir, wo Sie stehen und welche Struktur zu Ihren Zielen passt. Im Anschluss erhalten Sie eine klare Einordnung der nächsten Schritte."],
   ["Welche Leistungen bietet Brain Capital Asset an?", "Wir begleiten Sie in drei Kernbereichen: Kapitalmarkt & IPO, Fest- & Tagesgeld sowie individuelle Vermögensstrategien – jeweils abgestimmt auf Stabilität, Liquidität und Wachstum."],
   ["Wo ist Brain Capital Asset ansässig?", "Wir sind mit Standorten in Montabaur persönlich für Sie erreichbar und betreuen Mandate bundesweit."],
-  ["Wie kann ich Kontakt aufnehmen?", "Sie erreichen uns telefonisch unter 089 244 167 734 oder per E-Mail an info@brain-capital-asset.com – alternativ nutzen Sie das Kontaktformular auf dieser Seite."],
+  ["Wie kann ich Kontakt aufnehmen?", "Sie erreichen uns telefonisch unter 089 244 167 734 oder per E-Mail an info@braincapitalasset.com – alternativ nutzen Sie das Kontaktformular auf dieser Seite."],
 ];
 
 const team = [
@@ -255,7 +255,7 @@ export default function Home() {
             <article>
               <Quote size={26} />
               <p>„Die Beratung war transparent, klar strukturiert und mit einem überzeugenden Blick auf langfristige Finanzlösungen verbunden.“</p>
-              <footer><strong>Michael Becker</strong><span>Becker Invest Solutions GmbH</span></footer>
+              <footer><strong>Michael Becker</strong><span>Becker Invest Solutions </span></footer>
             </article>
             <article>
               <Quote size={26} />
@@ -281,7 +281,7 @@ export default function Home() {
             <p>In einem unverbindlichen Erstgespräch klären wir, wo Sie stehen und welche Struktur zu Ihren Zielen passt.</p>
             <div className="contact-links">
               <a href="tel:+4930519994482"><span><Phone size={19} /></span><div><small>Telefon</small><strong>089 244 167 734</strong></div></a>
-              <a href="mailto:info@brain-capital-asset.com"><span><Mail size={19} /></span><div><small>E-Mail</small><strong>info@brain-capital-asset.com</strong></div></a>
+              <a href="mailto:info@braincapitalasset.com"><span><Mail size={19} /></span><div><small>E-Mail</small><strong>info@braincapitalasset.com</strong></div></a>
               <div><span><MapPin size={19} /></span><div><small>Standorte</small><strong>Montabaur</strong></div></div>
             </div>
           </div>
@@ -303,7 +303,7 @@ export default function Home() {
         <div className="site-container cta-bar-grid">
           <div className="cta-bar-info">
             <div><small>Telefon Support</small><strong>089 244 167 734</strong></div>
-            <div><small>E-Mail-Service</small><strong>info@brain-capital-asset.com</strong></div>
+            <div><small>E-Mail-Service</small><strong>info@braincapitalasset.com</strong></div>
           </div>
           <div className="cta-bar-actions">
             <a className="button button--primary" href="#kontakt">Erstgespräch vereinbaren</a>

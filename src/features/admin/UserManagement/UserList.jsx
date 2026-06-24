@@ -78,15 +78,15 @@ const UserList = ({ data, setCurrentUser, setPassword, openPassword, setFilter, 
             <MentineMenu items={bulkMenuItems} ariaLabel="Sammelaktionen" />
           </div>
         ) : (
-          <div className="grid grid-cols-12 items-center min-h-[64px] px-4 text-[var(--muted)] text-[12px] font-bold uppercase tracking-[.05em] bg-[var(--surface-blue)]">
-            <div className="col-span-1"><Selection /></div>
-            <div className="col-span-2">Name</div>
-            <div className="col-span-2">E-Mail</div>
-            <div className="col-span-1">Land</div>
-            <div className="col-span-2 text-right">Festgeld</div>
-            <div className="col-span-2 text-right">Tagesgeld</div>
-            <div className="col-span-1 text-right">OpenAI</div>
-            <div className="col-span-1 flex justify-center"><MentineMenu items={bulkMenuItems} ariaLabel="Sammelaktionen" /></div>
+          <div className="grid grid-cols-[48px_repeat(6,minmax(0,1fr))_48px] gap-x-4 items-center min-h-[64px] px-4 text-[var(--muted)] text-[12px] font-bold uppercase tracking-[.05em] bg-[var(--surface-blue)]">
+            <div><Selection /></div>
+            <div className="truncate">Name</div>
+            <div className="truncate">E-Mail</div>
+            <div className="truncate">Land</div>
+            <div className="truncate text-right">Festgeld</div>
+            <div className="truncate text-right">Tagesgeld</div>
+            <div className="truncate text-right">OpenAI</div>
+            <div className="flex justify-center"><MentineMenu items={bulkMenuItems} ariaLabel="Sammelaktionen" /></div>
           </div>
         )}
 
@@ -112,15 +112,15 @@ const UserList = ({ data, setCurrentUser, setPassword, openPassword, setFilter, 
               ))}
             </div>
           ) : users.map((row) => (
-            <div key={row._id} className="grid grid-cols-12 items-center px-4 min-h-[64px] text-[14px] border-b border-[var(--line)] hover:bg-[var(--surface-blue)]">
-              <div className="col-span-1"><Selection row={row} /></div>
-              <div className="col-span-2 truncate font-medium">{row.firstName} {row.lastName}</div>
-              <div className="col-span-2 truncate text-[var(--muted)]">{row.email}</div>
-              <div className="col-span-1 truncate">{displayValue(row.country)}</div>
-              <div className="col-span-2 text-right tabular-nums">{hasProduct(row, "festgeld") ? money(row.festgeld?.betrag) : "–"}</div>
-              <div className="col-span-2 text-right tabular-nums">{hasProduct(row, "tagesgeld") ? money(row.tagesgeld?.betrag) : "–"}</div>
-              <div className="col-span-1 text-right tabular-nums">{hasProduct(row, "openAI") ? money(row.openAI?.depotWert) : "–"}</div>
-              <div className="col-span-1 flex justify-center"><MentineMenu items={rowMenuItems(row._id)} ariaLabel={`Aktionen für ${row.firstName} ${row.lastName}`} /></div>
+            <div key={row._id} className="grid grid-cols-[48px_repeat(6,minmax(0,1fr))_48px] gap-x-4 items-center px-4 min-h-[64px] text-[14px] border-b border-[var(--line)] hover:bg-[var(--surface-blue)]">
+              <div><Selection row={row} /></div>
+              <div className="truncate font-medium">{row.firstName} {row.lastName}</div>
+              <div className="truncate text-[var(--muted)]" title={row.email}>{row.email}</div>
+              <div className="truncate">{displayValue(row.country)}</div>
+              <div className="truncate text-right tabular-nums">{hasProduct(row, "festgeld") ? money(row.festgeld?.betrag) : "–"}</div>
+              <div className="truncate text-right tabular-nums">{hasProduct(row, "tagesgeld") ? money(row.tagesgeld?.betrag) : "–"}</div>
+              <div className="truncate text-right tabular-nums">{hasProduct(row, "openAI") ? money(row.openAI?.depotWert) : "–"}</div>
+              <div className="flex justify-center"><MentineMenu items={rowMenuItems(row._id)} ariaLabel={`Aktionen für ${row.firstName} ${row.lastName}`} /></div>
             </div>
           ))}
         </div>

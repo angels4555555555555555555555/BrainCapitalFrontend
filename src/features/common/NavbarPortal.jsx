@@ -39,7 +39,7 @@ const NavbarPortal = ({ admin = false, openMenu, setOpenMenu }) => {
 
       <div className="dash-topbar">
         <div className="p-2 rounded-md bg-[var(--gold)]">
-          <Image src="/Logo.png" width={1219} height={358} alt="Brain Capital Asset" className="w-40 h-auto" priority />
+          <Image src="/logo.png" width={1219} height={358} alt="Brain Capital Asset" className="w-40 h-auto" priority />
         </div>
         <div className="flex items-center gap-2">
           {!admin ? (

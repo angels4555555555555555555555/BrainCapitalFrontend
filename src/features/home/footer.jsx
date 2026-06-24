@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="site-container footer-grid">
         <div className="footer-brand">
           <Link className="brand brand--footer p-2 rounded-md bg-[#f2600c]" href="/">
-            <Image src="/Logo.png" width={1219} height={358} className="w-40 h-auto" alt="Brain Capital Asset" />
+            <Image src="/logo.png" width={1219} height={358} className="w-40 h-auto" alt="Brain Capital Asset" />
           </Link>
           <p>Präzise Finanzstrategien für Stabilität, Liquidität und nachhaltiges Wachstum.</p>
           <div className="footer-social">

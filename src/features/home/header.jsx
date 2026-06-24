@@ -50,7 +50,7 @@ export default function Header() {
       <div className="header-primary w-full">
         <div className="site-container header-primary__inner w-full">
           <Link className="brand bg-[var(--gold)] px-2 py-1 rounded-md" href="/" onClick={() => setOpen(false)} aria-label="Brain Capital Asset Startseite">
-            <Image src="/Logo.png" width={1219} height={358} className="w-28 h-auto" alt="Brain Capital Asset" priority />
+            <Image src="/logo.png" width={1219} height={358} className="w-28 h-auto" alt="Brain Capital Asset" priority />
           </Link>
           <p className="brand-claim"><strong>Ihr Partner </strong>für strukturierte Finanzstrategien</p>
           <div className="header-utilities">

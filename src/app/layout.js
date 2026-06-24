@@ -25,7 +25,7 @@ export const metadata = {
   title: "Brain Capital Asset GmbH | Finanzstrategien mit Klarheit",
   description: "Brain Capital Asset entwickelt strukturierte Finanzstrategien für Vermögensverwaltung, Kapitalmarkt, IPO sowie Fest- und Tagesgeld.",
   icons: {
-    icon: '/logo.png',
+    icon: '/favicon.png',
   },
 };
 

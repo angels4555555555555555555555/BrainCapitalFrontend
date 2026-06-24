@@ -57,26 +57,27 @@ const faqs = [
   ["Wie läuft das Erstgespräch ab?", "In einem unverbindlichen Erstgespräch klären wir, wo Sie stehen und welche Struktur zu Ihren Zielen passt. Im Anschluss erhalten Sie eine klare Einordnung der nächsten Schritte."],
   ["Welche Leistungen bietet Brain Capital Asset an?", "Wir begleiten Sie in drei Kernbereichen: Kapitalmarkt & IPO, Fest- & Tagesgeld sowie individuelle Vermögensstrategien – jeweils abgestimmt auf Stabilität, Liquidität und Wachstum."],
   ["Wo ist Brain Capital Asset ansässig?", "Wir sind mit Standorten in Montabaur persönlich für Sie erreichbar und betreuen Mandate bundesweit."],
-  ["Wie kann ich Kontakt aufnehmen?", "Sie erreichen uns telefonisch unter 030 519 994 482 oder per E-Mail an info@brain-capital-asset.com – alternativ nutzen Sie das Kontaktformular auf dieser Seite."],
+  ["Wie kann ich Kontakt aufnehmen?", "Sie erreichen uns telefonisch unter 089 244 167 734 oder per E-Mail an info@brain-capital-asset.com – alternativ nutzen Sie das Kontaktformular auf dieser Seite."],
 ];
 
 const team = [
   {
-    name: "Christian Herzog",
+    name: "Thomas Goldberg",
     role: "Finanzberater",
-    image: "/image (3).jfif",
+    image: "/image (1).jpg",
     text: "Entwickelt kapitalmarktorientierte Strategien mit einem klaren Fokus auf langfristige Wertschöpfung.",
   },
   {
-    name: "Volker Hartmund",
+    name: "Jan Beulich",
     role: "Investmentexperte",
-    image: "/image (6).png",
+    image: "/image (2).jpg",
     text: "Verbindet präzise Marktanalyse mit strategischem Weitblick bei der Strukturierung von Investments.",
   },
   {
-    name: "Christiane Schneider",
+    name: "Christiane Bauer",
     role: "Assistenz der Geschäftsführung",
-    image: "/image.jpg",
+    image: "/image (3).jpg",
+    imagePosition: "center top",
     text: "Koordiniert zentrale Abläufe und sorgt für verlässliche, effiziente Kommunikation im Mandat.",
   },
 ];
@@ -156,7 +157,7 @@ export default function Home() {
       <section className="section section--tinted" id="unternehmen">
         <div className="site-container story-grid">
           <div className="story-visual">
-            <Image src="/image (7).png" alt="Strategiegespräch zu Anlageformen und Kapitalmarkt" width={800} height={1000} sizes="(max-width: 860px) 100vw, 42vw" />
+            <img src="https://images.unsplash.com/photo-1738737271801-d404a575d870?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Strategiegespräch zu Anlageformen und Kapitalmarkt" width={700} height={1200} sizes="(max-width: 860px) 100vw, 42vw rounded-md" />
             <div className="visual-note">
               <Sparkles size={19} />
               <div><span>Seit 2021</span><strong>Strategisch an Ihrer Seite</strong></div>
@@ -220,7 +221,7 @@ export default function Home() {
           <div className="team-grid">
             {team.map((person) => (
               <article className="team-card" key={person.name}>
-                <Image src={person.image} alt={`${person.name}, ${person.role}`} width={640} height={720} sizes="(max-width: 620px) 100vw, (max-width: 860px) 50vw, 33vw" />
+                <Image src={person.image} alt={`${person.name}, ${person.role}`} width={640} height={720} sizes="(max-width: 620px) 100vw, (max-width: 860px) 50vw, 33vw" style={person.imagePosition ? { objectPosition: person.imagePosition } : undefined} />
                 <div className="team-card__body">
                   <span>{person.role}</span>
                   <h3>{person.name}</h3>
@@ -279,7 +280,7 @@ export default function Home() {
             <SectionHeading light eyebrow="Kontakt" title="Lassen Sie uns über Ihre nächsten Schritte sprechen" />
             <p>In einem unverbindlichen Erstgespräch klären wir, wo Sie stehen und welche Struktur zu Ihren Zielen passt.</p>
             <div className="contact-links">
-              <a href="tel:+4930519994482"><span><Phone size={19} /></span><div><small>Telefon</small><strong>030 519 994 482</strong></div></a>
+              <a href="tel:+4930519994482"><span><Phone size={19} /></span><div><small>Telefon</small><strong>089 244 167 734</strong></div></a>
               <a href="mailto:info@brain-capital-asset.com"><span><Mail size={19} /></span><div><small>E-Mail</small><strong>info@brain-capital-asset.com</strong></div></a>
               <div><span><MapPin size={19} /></span><div><small>Standorte</small><strong>Montabaur</strong></div></div>
             </div>
@@ -301,7 +302,7 @@ export default function Home() {
       <section className="cta-bar">
         <div className="site-container cta-bar-grid">
           <div className="cta-bar-info">
-            <div><small>Telefon Support</small><strong>030 519 994 482</strong></div>
+            <div><small>Telefon Support</small><strong>089 244 167 734</strong></div>
             <div><small>E-Mail-Service</small><strong>info@brain-capital-asset.com</strong></div>
           </div>
           <div className="cta-bar-actions">
@@ -314,7 +315,7 @@ export default function Home() {
       <section className="office-strip">
         <div className="site-container office-grid">
           <div><Building2 size={20} /><span><small>Hauptsitz</small><strong>Bahnalle 11-13 56410 Deutschland Montabaur</strong></span></div>
-          <div><Landmark size={20} /><span><small>Zweigniederlassung</small><strong>Potsdamer Str. 2 · 10785 Berlin</strong></span></div>
+          <div><Landmark size={20} /><span><small>Zweigniederlassung</small><strong>Hopfenstraße 4 80335 München Deutschland</strong></span></div>
           <a href="https://maps.google.com/?q=Potsdamer+Str.+2,+10785+Berlin" target="_blank" rel="noreferrer">Auf Karte öffnen <ArrowRight size={16} /></a>
         </div>
       </section>

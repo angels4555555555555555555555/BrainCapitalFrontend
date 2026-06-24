@@ -21,11 +21,16 @@ const contactCards = [
     content: <address className="not-italic">Banhalle 11-13<br />56410 Montabaur<br /><br />Deutschland</address>,
   },
   {
+    icon: Building2,
+    label: "Zweigniederlassung",
+    content: <address className="not-italic">Hopfenstraße 4<br />80335 München<br/><br/>Deutschland</address>,
+  },
+  {
     icon: Phone,
     label: "Direkter Kontakt",
     content: (
       <div className="flex flex-col gap-1">
-        <a className="hover:text-[var(--accent)]" href="tel:+4930519994482">030 519 994 482</a>
+        <a className="hover:text-[var(--accent)]" href="tel:+4930519994482">089 244 167 734</a>
         <a className="break-all hover:text-[var(--accent)]" href="mailto:info@brain-capital-asset.com">info@brain-capital-asset.com</a>
       </div>
     ),
@@ -39,11 +44,11 @@ const legalSections = [
     content: (
       <dl className="grid sm:grid-cols-[190px_1fr] gap-x-6 gap-y-3">
         <dt className="font-semibold text-[var(--muted)]">Geschäftsführer</dt>
-        <dd>Alexander Rizzeli</dd>
+        <dd>Vietor, Marco Vallendar</dd>
         <dt className="font-semibold text-[var(--muted)]">Registergericht</dt>
         <dd>Amtsgericht Fürth</dd>
         <dt className="font-semibold text-[var(--muted)]">Registernummer</dt>
-        <dd>10165237</dd>
+        <dd>HRB 30295</dd>
       </dl>
     ),
   },
@@ -139,7 +144,7 @@ export default function Impressum() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4 mb-10 md:mb-14">
+          <div className="grid md:grid-cols-3 gap-4 mb-10 md:mb-14">
             {contactCards.map(({ icon: Icon, label, content }) => (
               <article key={label} className="rounded-[8px] border border-[var(--line)] bg-white p-6 md:p-7">
                 <div className="mb-5 flex size-10 items-center justify-center rounded-[6px] bg-[var(--gold)] text-[var(--navy)]">

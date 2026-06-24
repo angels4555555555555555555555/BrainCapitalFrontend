@@ -85,7 +85,7 @@ const UserList = ({ data, setCurrentUser, setPassword, openPassword, setFilter, 
             <div className="col-span-1">Land</div>
             <div className="col-span-2 text-right">Festgeld</div>
             <div className="col-span-2 text-right">Tagesgeld</div>
-            <div className="col-span-1 text-right">Depotwert</div>
+            <div className="col-span-1 text-right">OpenAI</div>
             <div className="col-span-1 flex justify-center"><MentineMenu items={bulkMenuItems} ariaLabel="Sammelaktionen" /></div>
           </div>
         )}

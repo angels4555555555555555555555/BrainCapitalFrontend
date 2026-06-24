@@ -48,8 +48,8 @@ export default function Header() {
     <header className={`site-header ${scrolled ? "site-header--scrolled" : ""}`}>
       <div className="header-primary w-full">
         <div className="site-container header-primary__inner w-full">
-          <Link className="brand bg-white p-1" href="/" onClick={() => setOpen(false)} aria-label="Brain Capital Asset Startseite">
-            <img src="/Logo.png" className="w-8" alt="" />
+          <Link className="brand bg-[var(--gold)] px-2 py-1 rounded-md" href="/" onClick={() => setOpen(false)} aria-label="Brain Capital Asset Startseite">
+            <img src="/Logo.png" className="w-28" alt="" />
           </Link>
           <p className="brand-claim"><strong>Ihr Partner </strong>für strukturierte Finanzstrategien</p>
           <div className="header-utilities">

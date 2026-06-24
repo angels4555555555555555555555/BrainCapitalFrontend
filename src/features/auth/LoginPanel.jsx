@@ -151,7 +151,9 @@ const LoginPanel = ({ variant }) => {
                   Admin
                 </button>
               </div>
-              <img src="/logo.png" className="w-20 p-4 mx-auto" alt="Brain Capital Asset" />
+              <div className="p-2 rounded-md bg-[var(--gold)] w-fit  mx-auto">
+                <img src="/logo.png" className="w-40" alt="Brain Capital Asset" />
+              </div>
               <h2 className="text-center">{isAdmin ? "Admin-Anmeldung" : "Willkommen zurück"}</h2>
               <p className="auth-subtitle text-center">
                 {isAdmin

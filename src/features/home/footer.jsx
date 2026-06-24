@@ -6,8 +6,8 @@ export default function Footer() {
     <footer className="site-footer" id="footer">
       <div className="site-container footer-grid">
         <div className="footer-brand">
-          <Link className="brand brand--footer" href="/">
-            <img src="/Logo.png" className="w-20 bg-white" alt="" />
+          <Link className="brand brand--footer p-2 rounded-md bg-[#f2600c]" href="/">
+            <img src="/Logo.png" className="w-40" alt="" />
           </Link>
           <p>Präzise Finanzstrategien für Stabilität, Liquidität und nachhaltiges Wachstum.</p>
           <div className="footer-social">
@@ -18,7 +18,7 @@ export default function Footer() {
         </div>
         <div className="footer-column"><span>Navigation</span><Link href="/#leistungen">Leistungen</Link><Link href="/#unternehmen">Unternehmen</Link><Link href="/#warum-rch">Warum Capital Brain</Link><Link href="/#kontakt">Kontakt</Link></div>
         <div className="footer-column"><span>Expertise</span><Link href="/verm-gensverwaltung">Vermögensverwaltung</Link><Link href="/ipo">Kapitalmarkt & IPO</Link><Link href="/arbitrage">Fest- & Tagesgeld</Link><Link href="/login">Kundenlogin</Link></div>
-        <div className="footer-column footer-contact"><span>Direkter Kontakt</span><a href="tel:+4930519994482"><Phone size={15} />030 519 994 482</a><a href="mailto:info@brain-capital-asset.com"><Mail size={15} />E-Mail senden <ArrowUpRight size={14} /></a><Link href="/Impressum">Impressum</Link></div>
+        <div className="footer-column footer-contact"><span>Direkter Kontakt</span><a href="tel:+4930519994482"><Phone size={15} />089 244 167 734</a><a href="mailto:info@brain-capital-asset.com"><Mail size={15} />E-Mail senden <ArrowUpRight size={14} /></a><Link href="/Impressum">Impressum</Link></div>
       </div>
       <div className="site-container footer-legal">
         <p>

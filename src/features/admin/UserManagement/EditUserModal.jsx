@@ -5,6 +5,7 @@ import { Modal, Button, TextInput, NumberInput, Select, Checkbox } from "@mantin
 import { DateInput } from "@mantine/dates";
 import { useForm } from "@mantine/form";
 import { useQueryClient } from "@tanstack/react-query";
+import { toast } from "sonner";
 import LoadingBackdrop from "@/features/common/LoadingBackdrop";
 import { useGetUser, useUpdateUser } from "@/hooks/admin/userManagement";
 import COUNTRIES from "./CountryList";
@@ -63,6 +64,10 @@ const SectionTitle = ({ children }) => (
   <div className="col-span-2 mt-4">
     <h3 className="text-[16px] font-semibold text-[var(--navy)] border-b border-[var(--line)] pb-2">{children}</h3>
   </div>
+);
+
+const Unit = ({ children }) => (
+  <span className="text-sm font-semibold text-[var(--muted)]">{children}</span>
 );
 
 const EditUserModal = ({ opened, onClose, currentUser: id }) => {
@@ -129,11 +134,20 @@ const EditUserModal = ({ opened, onClose, currentUser: id }) => {
     openAI: selectedProducts.includes("openAI") ? values.openAI : emptyProducts.openAI,
   });
 
+  const handleValidationErrors = (errors) => {
+    const fieldCount = Object.keys(errors).length;
+    toast.error("Benutzer konnte nicht aktualisiert werden", {
+      description: fieldCount === 1
+        ? "Bitte füllen Sie das markierte Pflichtfeld aus."
+        : `Bitte füllen Sie alle markierten Pflichtfelder aus (${fieldCount}).`,
+    });
+  };
+
   return (
     <>
       {(isPending || isUpdating) && <LoadingBackdrop />}
       <Modal opened={opened} onClose={onClose} title="Benutzer bearbeiten" radius={12} size="xl" centered>
-        <form onSubmit={form.onSubmit(handleSubmit)} className="p-4 gap-4 grid md:grid-cols-2">
+        <form onSubmit={form.onSubmit(handleSubmit, handleValidationErrors)} className="p-4 gap-4 grid md:grid-cols-2">
           <SectionTitle>Persönliche Informationen</SectionTitle>
           <TextInput label="Vorname" withAsterisk classNames={fieldClassNames} {...form.getInputProps("firstName")} />
           <TextInput label="Nachname" withAsterisk classNames={fieldClassNames} {...form.getInputProps("lastName")} />
@@ -157,28 +171,28 @@ const EditUserModal = ({ opened, onClose, currentUser: id }) => {
 
           {form.values.selectedProducts.includes("festgeld") && <>
           <SectionTitle>Festgeld-Details</SectionTitle>
-          <TextInput label="Bank" withAsterisk classNames={fieldClassNames} {...form.getInputProps("festgeld.bank")} />
-          <TextInput label="Laufzeit" withAsterisk classNames={fieldClassNames} {...form.getInputProps("festgeld.laufzeit")} />
-          <NumberInput label="Betrag in EUR" withAsterisk hideControls min={0} decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("festgeld.betrag")} />
-          <NumberInput label="Zinsen in %" withAsterisk hideControls min={0} decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("festgeld.zinsen")} />
+          <TextInput label="Bank" withAsterisk placeholder="Bank eingeben" classNames={fieldClassNames} {...form.getInputProps("festgeld.bank")} />
+          <NumberInput label="Betrag" withAsterisk placeholder="0,00" hideControls min={0} decimalScale={2} decimalSeparator="," thousandSeparator="." rightSection={<Unit>€</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("festgeld.betrag")} />
+          <NumberInput label="Zinsen" withAsterisk placeholder="0,00" hideControls min={0} decimalScale={2} decimalSeparator="," rightSection={<Unit>%</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("festgeld.zinsen")} />
+          <TextInput label="Laufzeit in Monate" withAsterisk placeholder="z. B. 36 Monate" classNames={fieldClassNames} {...form.getInputProps("festgeld.laufzeit")} />
           </>}
 
           {form.values.selectedProducts.includes("tagesgeld") && <>
           <SectionTitle>Tagesgeld-Details</SectionTitle>
-          <TextInput label="Bank" withAsterisk classNames={fieldClassNames} {...form.getInputProps("tagesgeld.bank")} />
-          <TextInput label="Garantierte Zinslaufzeit" withAsterisk classNames={fieldClassNames} {...form.getInputProps("tagesgeld.garantierteZinslaufzeit")} />
-          <NumberInput label="Betrag in EUR" withAsterisk hideControls min={0} decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("tagesgeld.betrag")} />
-          <NumberInput label="Zinsen in %" withAsterisk hideControls min={0} decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("tagesgeld.zinsen")} />
+          <TextInput label="Bank" withAsterisk placeholder="Bank eingeben" classNames={fieldClassNames} {...form.getInputProps("tagesgeld.bank")} />
+          <NumberInput label="Betrag" withAsterisk placeholder="0,00" hideControls min={0} decimalScale={2} decimalSeparator="," thousandSeparator="." rightSection={<Unit>€</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("tagesgeld.betrag")} />
+          <NumberInput label="Zinsen" withAsterisk placeholder="0,00" hideControls min={0} decimalScale={2} decimalSeparator="," rightSection={<Unit>%</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("tagesgeld.zinsen")} />
+          <TextInput label="Garantierte Zinslaufzeit" withAsterisk placeholder="z. B. 36 Monate 4%" classNames={fieldClassNames} {...form.getInputProps("tagesgeld.garantierteZinslaufzeit")} />
           </>}
 
           {form.values.selectedProducts.includes("openAI") && <>
           <SectionTitle>OpenAI-Details</SectionTitle>
-          <NumberInput label="Anzahl" withAsterisk hideControls min={0} classNames={fieldClassNames} {...form.getInputProps("openAI.anzahl")} />
-          <NumberInput label="Gekaufter Wert in EUR" withAsterisk hideControls min={0} decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("openAI.gekaufterWert")} />
-          <NumberInput label="Aktueller Wert in EUR" withAsterisk hideControls min={0} decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("openAI.aktuellerWert")} />
-          <NumberInput label="Investition in EUR" withAsterisk hideControls min={0} decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("openAI.investition")} />
-          <NumberInput label="Aktueller Gewinn in EUR" withAsterisk hideControls decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("openAI.aktuellerGewinn")} />
-          <NumberInput label="Depotwert in EUR" withAsterisk hideControls min={0} decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("openAI.depotWert")} />
+          <NumberInput label="ANZAHL" withAsterisk placeholder="Anzahl der Anteile" hideControls min={0} allowDecimal={false} classNames={fieldClassNames} {...form.getInputProps("openAI.anzahl")} />
+          <NumberInput label="Gekaufter Wert" withAsterisk placeholder="0,00" hideControls min={0} decimalScale={2} decimalSeparator="," thousandSeparator="." rightSection={<Unit>€</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("openAI.gekaufterWert")} />
+          <NumberInput label="Aktueller Wert" withAsterisk placeholder="0,00" hideControls min={0} decimalScale={2} decimalSeparator="," thousandSeparator="." rightSection={<Unit>€</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("openAI.aktuellerWert")} />
+          <NumberInput label="Investition" withAsterisk placeholder="0,00" hideControls min={0} decimalScale={2} decimalSeparator="," thousandSeparator="." rightSection={<Unit>€</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("openAI.investition")} />
+          <NumberInput label="Aktueller Gewinn" withAsterisk placeholder="0,00" hideControls decimalScale={2} decimalSeparator="," thousandSeparator="." rightSection={<Unit>€</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("openAI.aktuellerGewinn")} />
+          <NumberInput label="Depot Wert" withAsterisk placeholder="0,00" hideControls min={0} decimalScale={2} decimalSeparator="," thousandSeparator="." rightSection={<Unit>€</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("openAI.depotWert")} />
           </>}
 
           <Button unstyled type="submit" className="button button--primary">Änderungen speichern</Button>

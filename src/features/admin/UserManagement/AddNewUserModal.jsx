@@ -5,6 +5,7 @@ import { Modal, Button, TextInput, PasswordInput, NumberInput, Select, Checkbox 
 import { DateInput } from "@mantine/dates";
 import { useForm } from "@mantine/form";
 import { useQueryClient } from "@tanstack/react-query";
+import { toast } from "sonner";
 import COUNTRIES from "./CountryList";
 import LoadingBackdrop from "@/features/common/LoadingBackdrop";
 import { useAddNewUser } from "@/hooks/admin/userManagement";
@@ -92,6 +93,10 @@ const SectionTitle = ({ children }) => (
   </div>
 );
 
+const Unit = ({ children }) => (
+  <span className="text-sm font-semibold text-[var(--muted)]">{children}</span>
+);
+
 const AddNewUserModal = ({ opened, onClose }) => {
   const queryClient = useQueryClient();
   const form = useForm({
@@ -120,11 +125,20 @@ const AddNewUserModal = ({ opened, onClose }) => {
     mutate(payload);
   };
 
+  const handleValidationErrors = (errors) => {
+    const fieldCount = Object.keys(errors).length;
+    toast.error("Benutzer konnte nicht erstellt werden", {
+      description: fieldCount === 1
+        ? "Bitte füllen Sie das markierte Pflichtfeld aus."
+        : `Bitte füllen Sie alle markierten Pflichtfelder aus (${fieldCount}).`,
+    });
+  };
+
   return (
     <>
       {isPending && <LoadingBackdrop />}
       <Modal opened={opened} onClose={onClose} title="Neuen Benutzer hinzufügen" radius={12} size="xl" centered>
-        <form onSubmit={form.onSubmit(handleSubmit)} className="p-4 gap-4 grid md:grid-cols-2">
+        <form onSubmit={form.onSubmit(handleSubmit, handleValidationErrors)} className="p-4 gap-4 grid md:grid-cols-2">
           <SectionTitle>Persönliche Informationen</SectionTitle>
           <TextInput label="Vorname" withAsterisk classNames={fieldClassNames} {...form.getInputProps("firstName")} />
           <TextInput label="Nachname" withAsterisk classNames={fieldClassNames} {...form.getInputProps("lastName")} />
@@ -150,28 +164,28 @@ const AddNewUserModal = ({ opened, onClose }) => {
 
           {form.values.selectedProducts.includes("festgeld") && <>
           <SectionTitle>Festgeld-Details</SectionTitle>
-          <TextInput label="Bank" withAsterisk classNames={fieldClassNames} {...form.getInputProps("festgeld.bank")} />
-          <TextInput label="Laufzeit" withAsterisk placeholder="z. B. 12 Monate" classNames={fieldClassNames} {...form.getInputProps("festgeld.laufzeit")} />
-          <NumberInput label="Betrag in EUR" withAsterisk hideControls min={0} decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("festgeld.betrag")} />
-          <NumberInput label="Zinsen in %" withAsterisk hideControls min={0} decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("festgeld.zinsen")} />
+          <TextInput label="Bank" withAsterisk placeholder="Bank eingeben" classNames={fieldClassNames} {...form.getInputProps("festgeld.bank")} />
+          <NumberInput label="Betrag" withAsterisk placeholder="0,00" hideControls min={0} decimalScale={2} decimalSeparator="," thousandSeparator="." rightSection={<Unit>€</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("festgeld.betrag")} />
+          <NumberInput label="Zinsen" withAsterisk placeholder="0,00" hideControls min={0} decimalScale={2} decimalSeparator="," rightSection={<Unit>%</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("festgeld.zinsen")} />
+          <TextInput label="Laufzeit in Monate" withAsterisk placeholder="z. B. 36 Monate" classNames={fieldClassNames} {...form.getInputProps("festgeld.laufzeit")} />
           </>}
 
           {form.values.selectedProducts.includes("tagesgeld") && <>
           <SectionTitle>Tagesgeld-Details</SectionTitle>
-          <TextInput label="Bank" withAsterisk classNames={fieldClassNames} {...form.getInputProps("tagesgeld.bank")} />
-          <TextInput label="Garantierte Zinslaufzeit" withAsterisk placeholder="z. B. 6 Monate" classNames={fieldClassNames} {...form.getInputProps("tagesgeld.garantierteZinslaufzeit")} />
-          <NumberInput label="Betrag in EUR" withAsterisk hideControls min={0} decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("tagesgeld.betrag")} />
-          <NumberInput label="Zinsen in %" withAsterisk hideControls min={0} decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("tagesgeld.zinsen")} />
+          <TextInput label="Bank" withAsterisk placeholder="Bank eingeben" classNames={fieldClassNames} {...form.getInputProps("tagesgeld.bank")} />
+          <NumberInput label="Betrag" withAsterisk placeholder="0,00" hideControls min={0} decimalScale={2} decimalSeparator="," thousandSeparator="." rightSection={<Unit>€</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("tagesgeld.betrag")} />
+          <NumberInput label="Zinsen" withAsterisk placeholder="0,00" hideControls min={0} decimalScale={2} decimalSeparator="," rightSection={<Unit>%</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("tagesgeld.zinsen")} />
+          <TextInput label="Garantierte Zinslaufzeit" withAsterisk placeholder="z. B. 36 Monate 4%" classNames={fieldClassNames} {...form.getInputProps("tagesgeld.garantierteZinslaufzeit")} />
           </>}
 
           {form.values.selectedProducts.includes("openAI") && <>
           <SectionTitle>OpenAI-Details</SectionTitle>
-          <NumberInput label="Anzahl" withAsterisk hideControls min={0} classNames={fieldClassNames} {...form.getInputProps("openAI.anzahl")} />
-          <NumberInput label="Gekaufter Wert in EUR" withAsterisk hideControls min={0} decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("openAI.gekaufterWert")} />
-          <NumberInput label="Aktueller Wert in EUR" withAsterisk hideControls min={0} decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("openAI.aktuellerWert")} />
-          <NumberInput label="Investition in EUR" withAsterisk hideControls min={0} decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("openAI.investition")} />
-          <NumberInput label="Aktueller Gewinn in EUR" withAsterisk hideControls decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("openAI.aktuellerGewinn")} />
-          <NumberInput label="Depotwert in EUR" withAsterisk hideControls min={0} decimalScale={2} classNames={fieldClassNames} {...form.getInputProps("openAI.depotWert")} />
+          <NumberInput label="ANZAHL" withAsterisk placeholder="Anzahl der Anteile" hideControls min={0} allowDecimal={false} classNames={fieldClassNames} {...form.getInputProps("openAI.anzahl")} />
+          <NumberInput label="Gekaufter Wert" withAsterisk placeholder="0,00" hideControls min={0} decimalScale={2} decimalSeparator="," thousandSeparator="." rightSection={<Unit>€</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("openAI.gekaufterWert")} />
+          <NumberInput label="Aktueller Wert" withAsterisk placeholder="0,00" hideControls min={0} decimalScale={2} decimalSeparator="," thousandSeparator="." rightSection={<Unit>€</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("openAI.aktuellerWert")} />
+          <NumberInput label="Investition" withAsterisk placeholder="0,00" hideControls min={0} decimalScale={2} decimalSeparator="," thousandSeparator="." rightSection={<Unit>€</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("openAI.investition")} />
+          <NumberInput label="Aktueller Gewinn" withAsterisk placeholder="0,00" hideControls decimalScale={2} decimalSeparator="," thousandSeparator="." rightSection={<Unit>€</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("openAI.aktuellerGewinn")} />
+          <NumberInput label="Depot Wert" withAsterisk placeholder="0,00" hideControls min={0} decimalScale={2} decimalSeparator="," thousandSeparator="." rightSection={<Unit>€</Unit>} rightSectionPointerEvents="none" classNames={fieldClassNames} {...form.getInputProps("openAI.depotWert")} />
           </>}
 
           <Button unstyled type="submit" className="button button--primary">Speichern</Button>

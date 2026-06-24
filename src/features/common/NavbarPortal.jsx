@@ -37,12 +37,9 @@ const NavbarPortal = ({ admin = false, openMenu, setOpenMenu }) => {
       {(isAdminLoggingOut || isUserLoggingOut) && <LoadingBackdrop />}
 
       <div className="dash-topbar">
-        {admin ? (
-          <img src="/logo.png" alt="" className="w-10" />
-        ) : (
-          <img src="/logo.png" alt="" className="w-10" />
-        )}
-
+        <div className="p-2 rounded-md bg-[var(--gold)]">
+          <img src="/Logo.png" alt="" className="w-40" />
+        </div>
         <div className="flex items-center gap-2">
           {!admin ? (
             <div className="flex gap-3 items-center">

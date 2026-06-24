@@ -314,7 +314,7 @@ export default function Home() {
 
       <section className="office-strip">
         <div className="site-container office-grid">
-          <div><Building2 size={20} /><span><small>Hauptsitz</small><strong>Bahnalle 11-13 56410 Deutschland Montabaur</strong></span></div>
+          <div><Building2 size={20} /><span><small>Hauptsitz</small><strong>Bahnallee 11-13 56410 Deutschland Montabaur</strong></span></div>
           <div><Landmark size={20} /><span><small>Zweigniederlassung</small><strong>Hopfenstraße 4 80335 München Deutschland</strong></span></div>
           <a href="https://maps.google.com/?q=Potsdamer+Str.+2,+10785+Berlin" target="_blank" rel="noreferrer">Auf Karte öffnen <ArrowRight size={16} /></a>
         </div>

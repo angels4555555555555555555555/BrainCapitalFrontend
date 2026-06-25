@@ -5,7 +5,7 @@ const axiosInstance = axios.create({
         process.env.NEXT_PUBLIC_API_URL ||
         (process.env.NODE_ENV === "development"
             ? "http://localhost:5000/api"
-            : "https://brain-capital-backend.vercel.app/api"),
+            : "http://api.braincapitalasset.vercel.app/api"),
     withCredentials: true,
     timeout: 15000,
 });

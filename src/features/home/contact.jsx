@@ -4,7 +4,7 @@ export default function Contact() {
       <div className="p-6 bg-card h-[90%] self-center flex flex-col justify-between md:col-span-1 col-span-2 text-center lg:text-left">
         <h4 className="font-light text-2xl mb-2">Informationen zum Büro</h4>
         <p className="text-muted-foreground text-lg font-light">
-          bahnallee 11-13,
+          Bahnallee 11-13,
           <br />
           56410 Montabaur,
           <br />

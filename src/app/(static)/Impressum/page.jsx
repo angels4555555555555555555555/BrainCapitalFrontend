@@ -18,7 +18,7 @@ const contactCards = [
   {
     icon: MapPin,
     label: "Hauptsitz",
-    content: <address className="not-italic">bahnallee 11-13<br />56410 Montabaur<br /><br />Deutschland</address>,
+    content: <address className="not-italic">Bahnallee 11-13<br />56410 Montabaur<br /><br />Deutschland</address>,
   },
   {
     icon: Building2,
@@ -49,6 +49,8 @@ const legalSections = [
         <dd>Amtsgericht Fürth</dd>
         <dt className="font-semibold text-[var(--muted)]">Registernummer</dt>
         <dd>HRB 30295</dd>
+        <dt className="font-semibold text-[var(--muted)]">BaFin ID</dt>
+        <dd>10165237</dd>
       </dl>
     ),
   },
